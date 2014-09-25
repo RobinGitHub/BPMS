@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0E09EE4C-BA1B-449C-8AB7-9E0FDB4D4CD4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BPMS.Services</RootNamespace>
+    <AssemblyName>BPMS.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Frame\DataDictionary.cs" />
+    <Compile Include="Frame\Employee.cs" />
+    <Compile Include="Frame\IPBlacklist.cs" />
+    <Compile Include="Frame\Login.cs" />
+    <Compile Include="Frame\MenuInfo.cs" />
+    <Compile Include="Frame\Organization.cs" />
+    <Compile Include="Frame\PublicVisit.cs" />
+    <Compile Include="Other\AppUpdateService.cs" />
+    <Compile Include="Other\BaseService.cs" />
+    <Compile Include="Frame\Cache.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Frame\PurviewInfo.cs" />
+    <Compile Include="Frame\RoleInfo.cs" />
+    <Compile Include="Frame\RolePurview.cs" />
+    <Compile Include="Frame\Service.cs" />
+    <Compile Include="Frame\SysLog.cs" />
+    <Compile Include="Frame\SysLoginLog.cs" />
+    <Compile Include="Frame\SystemExceptionLog.cs" />
+    <Compile Include="Frame\SystemInfo.cs" />
+    <Compile Include="Frame\UserInfo.cs" />
+    <Compile Include="Frame\UserPurview.cs" />
+    <Compile Include="Frame\UserRole.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AppUpdaterConracts\AppUpdaterContracts.csproj">
+      <Project>{25d00a1a-b72f-4a35-bc0b-20cb5f8cf816}</Project>
+      <Name>AppUpdaterContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BPMS.BLL\BPMS.BLL.csproj">
+      <Project>{0ffcdec5-0708-492a-bdc7-c76835e9286b}</Project>
+      <Name>BPMS.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BPMS.Common\BPMS.Common.csproj">
+      <Project>{6b792cd9-9dc9-4b58-a8ba-143f49375ca4}</Project>
+      <Name>BPMS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BPMS.Contracts\BPMS.Contracts.csproj">
+      <Project>{3a0eafcd-b5eb-4f96-ba09-45c9afe652d7}</Project>
+      <Name>BPMS.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BPMS.DAL\BPMS.DAL.csproj">
+      <Project>{5cb7e019-50eb-4d96-8bb1-9bcfde97f14e}</Project>
+      <Name>BPMS.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BPMS.Model\BPMS.Model.csproj">
+      <Project>{afe41757-1ba4-426c-a4a5-b25768b57a08}</Project>
+      <Name>BPMS.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

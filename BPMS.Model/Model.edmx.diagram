@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="97e9cb299fcf4c75ab204112b461a4d1" Name="Diagram1" ZoomLevel="74" ShowGrid="true">
+        <EntityTypeShape EntityType="BPMSModel.DataDictionary" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="BPMSModel.Employee" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="BPMSModel.IPBlacklist" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="BPMSModel.MenuInfo" Width="1.5" PointX="2.75" PointY="2.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="BPMSModel.Organization" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="BPMSModel.PurviewInfo" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="BPMSModel.RoleInfo" Width="1.5" PointX="4.75" PointY="2.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="BPMSModel.RolePurview" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="BPMSModel.SysLogDetails" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="BPMSModel.SysLoginLog" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="BPMSModel.SystemExceptionLog" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="BPMSModel.SystemInfo" Width="1.5" PointX="6.75" PointY="2.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="BPMSModel.TableId" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="BPMSModel.UserInfo" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="BPMSModel.UserPurview" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="BPMSModel.UserRole" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="BPMSModel.SysLog" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

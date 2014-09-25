@@ -1,0 +1,33 @@
+﻿<dx:DXWindow
+    x:Class="AppUpdater.Download"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:AppUpdater"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+    xmlns:collections="clr-namespace:System.Collections;assembly=mscorlib"
+    xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+    Title="更新目录" Height="300" Width="420" 
+    SnapsToDevicePixels="True" UseLayoutRounding="True"
+    dx:ThemeManager.ThemeName="MetropolisLight" AllowsTransparency="False" WindowStyle="SingleBorderWindow"
+    ResizeMode="NoResize"
+    >
+
+    <Grid>
+        <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="2">
+            <Button Content="下载" Name="btnDownload" DockPanel.Dock="Bottom" Height="21" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="75" Margin="0, 2, 5, 3"/>
+            <dxg:GridControl AutoGenerateColumns="None" EnableSmartColumnsGeneration="False" VerticalAlignment="Stretch" SelectionMode="Cell" Name="gridControl"  >
+                <dxg:GridControl.Columns>
+                    <dxg:GridColumn x:Name="colFileName" FieldName="FileName" Header="文件" HorizontalHeaderContentAlignment="Center" Width="150" />
+                    <dxg:GridColumn x:Name="colFileSize" FieldName="FileSize" Header="大小" HorizontalHeaderContentAlignment="Center" Width="60" FixedWidth="True" />
+                    <dxg:GridColumn x:Name="colDownloadSize" FieldName="DownloadSize" Header="完成" HorizontalHeaderContentAlignment="Center" Width="80" FixedWidth="True"/>
+                    <dxg:GridColumn x:Name="colPercent" FieldName="Percent" Header="进度" HorizontalHeaderContentAlignment="Center" Width="60" FixedWidth="True" SortOrder="Ascending" SortIndex="0" />
+                </dxg:GridControl.Columns>
+                <dxg:GridControl.View>
+                    <dxg:TableView Name="tableView" ShowTotalSummary="False" AllowEditing="False" AllowBandMoving="False" AllowBandResizing="False" AllowBestFit="False" AllowColumnFiltering="False" AllowColumnMoving="False" AllowDateTimeGroupIntervalMenu="False" AllowFilterEditor="False" AllowGrouping="False" AllowMoveColumnToDropArea="False" AllowResizing="False" AutoMoveRowFocus="False" ShowBandsPanel="False" ShowBandsInCustomizationForm="False" ShowGroupPanel="False" ShowSearchPanelCloseButton="False" BestFitArea="None" IsGroupFooterMenuEnabled="False" IsGroupPanelMenuEnabled="False" IsColumnMenuEnabled="False"/>
+                </dxg:GridControl.View>
+            </dxg:GridControl>
+        </DockPanel>
+    </Grid>
+</dx:DXWindow>

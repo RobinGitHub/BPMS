@@ -1,0 +1,33 @@
+﻿<dx:DXWindow
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    x:Class="BPMS.Views.Default.LoginSelectRoleWindow"
+    Title="选择登录角色" Height="212.5" Width="259.75"
+    SnapsToDevicePixels="True" UseLayoutRounding="True"
+    ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
+    Style="{StaticResource ResourceKey=ChildWindowStyle}"
+    >
+
+    <Grid>
+        <Label Content="请选择登录角色" HorizontalAlignment="Left" Margin="87,33,0,0" VerticalAlignment="Top"  Width="96" Height="22"/>
+
+        <dxe:ComboBoxEdit HorizontalAlignment="Left" Margin="76,78,0,0" VerticalAlignment="Top" Width="120" Height="22" 
+          ItemsSource="{Binding RoleList}"
+		  SelectedItem="{Binding SelectedRole}"
+		  DisplayMember="Text" 
+		  ValueMember="ID"
+          >
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectedIndexChanged">
+                    <i:InvokeCommandAction Command="{Binding SelectedIndexChangedCommand}" CommandParameter="{Binding SelectedRole}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </dxe:ComboBoxEdit>
+        <Button IsEnabled="{Binding SelectRoleCanLogin}" Command="{Binding LoginCommand}"  Content="确定" HorizontalAlignment="Left" Margin="76,122,0,0" VerticalAlignment="Top" Width="120"/>
+
+
+    </Grid>
+</dx:DXWindow>

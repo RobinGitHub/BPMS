@@ -1,0 +1,28 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+        xmlns:dxca="http://schemas.devexpress.com/winfx/2008/xaml/carousel" 
+        xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui"
+        xmlns:my="clr-namespace:BPMS.Views.Default"
+        >
+    
+    
+    <Style TargetType="dx:DXWindow">
+        <Setter Property="FontFamily" Value="宋体" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="dx:ThemeManager.ThemeName" Value="DXStyle" />
+    </Style>
+
+    <!--设置窗体皮肤 必须要设定 Key 然后页面 样式引用 运行才有效果 -->
+    <Style x:Key="WindowStyle" TargetType="Window">
+        <Setter Property="dx:ThemeManager.ThemeName" Value="DXStyle" />
+    </Style>
+
+    <Style x:Key="ChildWindowStyle" TargetType="Window">
+        <Setter Property="FontFamily" Value="宋体" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="ShowInTaskbar" Value="False" />
+        <Setter Property="dx:ThemeManager.ThemeName" Value="DXStyle" />
+    </Style>
+</ResourceDictionary>

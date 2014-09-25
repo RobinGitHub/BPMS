@@ -1,0 +1,35 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:dxca="http://schemas.devexpress.com/winfx/2008/xaml/carousel"
+             x:Class="BPMS.Views.Default.MaskControl" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Style x:Key="EffectStyle" TargetType="{x:Type FrameworkElement}">
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect BlurRadius="25" Color="Black" Direction="0" Opacity="0.3"
+RenderingBias="Performance" ShadowDepth="0.2"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid> 
+        <Grid Background="LightGray" Name="MaskFloor" Panel.ZIndex="9998" Opacity="0" Visibility="Collapsed"></Grid>
+        <Grid Width="180" Name="InfFloor" Panel.ZIndex="9999" Height="70" Opacity="0" Visibility="Collapsed" Style="{StaticResource EffectStyle}">
+            <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" Text="Please Wait" Name="tbCaption" VerticalAlignment="Top" Height="27" Width="124" FontFamily="Courier New" FontSize="18"/>
+            <ProgressBar HorizontalAlignment="Center" VerticalAlignment="Bottom" IsIndeterminate="True" Width="142" Height="19" Margin="0,0,0,10" />
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#f6f7f8" Offset="0" />
+                    <GradientStop Color="#e2e3e4" Offset="0.4" />
+                    <GradientStop Color="#E0E0E0" Offset="1" />
+                </LinearGradientBrush>
+            </Grid.Background>
+        </Grid>
+
+    </Grid>
+</UserControl>

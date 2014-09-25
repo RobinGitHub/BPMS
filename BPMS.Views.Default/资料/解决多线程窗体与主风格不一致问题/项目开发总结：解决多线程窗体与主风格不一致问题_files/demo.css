@@ -1,0 +1,647 @@
+﻿@charset "utf-8";
+body, div, dl, dt, dd, ul, ol, li, form, fieldset, input, textarea, blockquote, th, td {
+	margin:0;
+	padding:0;
+}
+table {
+	bordre-collapse:collapse;
+	boder-spacing:0;
+}
+img {
+	border:0;
+}
+ol, ul {
+	list-style:none;
+}
+a {
+	text-decoration:none;
+	color:#000;
+}
+a:hover {
+	color: #cc3333;
+}
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+.cl {
+	clear:both;
+}
+.tl {
+	text-align:left;
+}
+.tr {
+	text-align:right;
+}
+.tc {
+	text-align:center;
+}
+.bold {
+	font-weight:bold;
+}
+.rel {
+	position:relative;
+}
+.abs {
+	position:absolute;
+}
+.none {
+	display:none;
+}
+.inline {
+	display: inline;
+}
+.vm {
+	vertical-align: middle;
+}
+.vt {
+	vertical-align: top;
+}
+.vb {
+	vertical-align: bottom;
+}
+.hide {
+	visibility: hidden;
+}
+.ma {
+	margin: 0 auto;
+}
+.pon {
+	cursor: pointer;
+}
+.oh {
+	overflow: hidden;
+}
+.w100p {
+	width: 100%;
+}
+.h100p {
+	height:100%;
+}
+.top {
+	top: 0px;
+}
+.right {
+	right: 0px;
+}
+.bottom {
+	bottom: 0px;
+}
+.left {
+	left: 0px;
+}
+.tdl {
+	text-decoration:underline;
+}
+.opacity5 {
+	filter:alpha(opacity=50);
+	opacity:0.5;
+}
+.opacity1 {
+	filter:alpha(opacity=1);
+	opacity:1;
+}
+.cc0000{
+ color: #cc0000;
+}
+body {
+	background: url("http://cdn.verydemo.com/images/mainbg.gif") repeat-x #FFFFFF;
+	color: #000000;
+	font-family: Microsoft YaHei,"微软雅黑",Lucida,Verdana,Hiragino Sans GB,STHeiti,WenQuanYi Micro Hei,SimSun,sans-serif;
+	font-size: 12px;
+	line-height: 24px;
+}
+.button{
+ background: url("http://cdn.verydemo.com/images/button.gif");
+ width: 68px;
+ height: 22px;
+ line-height: 22px;
+ color: #fff;
+ cursor: pointer;
+ border-width: 0px;
+}
+
+.top-div {
+	height: 107px;
+	width: 1200px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.logo-div {
+	padding: 10px 0 0 0;
+}
+
+.search-div {
+	position: absolute;
+	right: 0px;
+	top: 30px;
+	width: 612px;
+	height: 36px;
+	background: url("http://cdn.verydemo.com/images/new-searchbar-broad.png") no-repeat;
+}
+.hot-search-div {
+	position: absolute;
+	right: 0px;
+	top: 69px;
+	width: 604px;
+	height:18px;
+	line-height:18px;
+	overflow:hidden;
+}
+
+
+.reg-login {
+	position: absolute;
+	right: 0px;
+	top: 4px;
+	line-height: 18px;
+}
+
+.reg-login .href {
+	background: url("http://cdn.verydemo.com/images/index-to-bt.gif");
+	height: 18px;
+	width: 60px;
+	text-align: center;
+	color: #ffffff;
+	display: inline-block;
+	margin: 0;
+}
+
+.reg-login .login:hover {
+	color: #ffffff;
+	font-weight: bold;
+}
+
+.search-div .left {
+	float: left;
+	padding: 9px 0 0 7px;
+	_padding: 12px 0 0 7px;
+}
+
+.search-div .left .input {
+	width: 424px;
+	border: 0px;
+	height: 16px;
+	line-height: 16px;
+	color: #cccccc;
+}
+
+.search-div .right {
+	float: left;
+	padding: 8px 0 0 56px;
+	_padding: 9px 0 0 56px;
+}
+
+.search-div .right a {
+	color: #ffffff;
+	font-weight: bold;
+}
+
+ 
+.nav-div {
+	width: 1200px;
+	margin: 0 auto;
+	line-height: 42px;
+	position: relative;
+}
+
+.nav-div ul li {
+	float: left;
+	background: url("http://cdn.verydemo.com/images/navli.gif") no-repeat right;
+}
+
+.nav-div ul li a {
+	color: #fff;
+	font-weight: bold;
+	padding: 0 20px 0 20px;
+}
+
+.nav-div ul li a:hover {
+	color: #fff;
+}
+
+.nav-div ul li.active {
+	background: url("http://cdn.verydemo.com/images/navli_a.gif");
+}
+
+.nav-div ul li.active a {
+	color: red;
+}
+.nav-div ul li.active a:hover {
+	color: red;
+}
+
+.nav-div ul li.hover {
+	background: url("http://cdn.verydemo.com/images/navli_h.gif");
+}
+
+.nav-more-div {
+	position: absolute;
+	right: 10px;
+	top: 0px;
+}
+
+.nav-more-div a {
+	color: #fff;
+	font-weight: bold;
+}
+
+ 
+.sub-nav-div {
+	position: absolute;
+	line-height: 24px;
+	height: 24px;
+	left: 600px;
+	top: 79px;
+	z-index: 100;
+	padding-bottom: 5px;
+	width: auto;
+	filter:alpha(opacity=0);
+	opacity:0;
+}
+
+#subNavImg {
+	position: absolute;
+	top: 23px;
+	left: 20px;
+}
+
+
+.sub-nav-div ul li {
+	background: url("http://cdn.verydemo.com/images/sub-nav-center-bg.gif");
+	padding: 0 6px 0 6px;
+	float: left;
+}
+
+.sub-nav-div ul li.left {
+	width: 4px;
+	height: 24px;
+	padding: 0;
+	background: url("http://cdn.verydemo.com/images/sub-nav-left-bg.gif") no-repeat;
+	overflow: hidden;
+}
+
+.sub-nav-div ul li.right {
+	width: 4px;
+	height: 24px;
+	padding: 0;
+	overflow:hidden;
+	background: url("http://cdn.verydemo.com/images/sub-nav-right-bg.gif") no-repeat;;
+}
+
+ 
+.date-div {
+	clear: both;
+	padding: 7px 0 0 0;
+	margin: 0 auto;
+	width: 1001px;
+}
+
+ 
+.main-div {
+	margin: 0 auto;
+	width: 1200px;
+}
+
+.main-div .left-div {
+	width: 912px;
+	float: left;
+}
+
+.main-div .right-div {
+	float: right;
+	width: 280px;
+}
+
+ 
+.right-demo-div .content ul li {
+	background: url("http://cdn.verydemo.com/images/dot1.gif") no-repeat 3px 10px;
+	text-indent: 10px;
+}
+
+.tag-container {
+	background: #ffffff;
+	padding: 3px 0 7px 0;
+}
+
+.tag-div {
+	border: 1px solid #cccccc;
+	background: url("http://cdn.verydemo.com/images/mvr_bg.png") repeat-x #ffffff;
+	word-wrap: break-word;
+	word-break: normal;
+	white-space: normal;
+}
+
+.tag-div .tag2 {
+	border: 1px solid #ffffff;
+}
+
+.tag-div .tag2 .title {
+	padding: 4px 0 0 4px;
+}
+
+.tag-div .tag2 .title div {
+	border-left: 5px solid #ff0000;
+	text-indent: 4px;
+	font-weight: bold;
+}
+
+.tag-div .tag2 .content {
+	padding: 5px 6px 10px 3px;
+}
+
+.tag-div .tag2 .content a {
+	display: inline-block;
+	border-right: 3px solid #cccccc;
+	line-height: 12px;
+	padding-right: 8px;
+	padding-left: 6px;
+	margin-bottom: 5px;
+	_margin-bottom: 10px;
+}
+
+.tag-div .tag2 .content2 ul {
+	padding: 0 10px 8px 6px;
+	line-height: 22px;
+}
+.tag-div .tag2 .content3{
+	padding: 6px 0 8px 10px;
+	line-height: 22px;
+}
+.tag-div .tag2 .content3 .list{
+	padding: 4px 10px 10px 0px;
+}
+.tag-div .tag2 .content3 .list .left{
+	width:52px;
+	float: left;
+}
+.tag-div .tag2 .content3 .list .left img{
+	border: 1px solid #cccccc;
+}
+.tag-div .tag2 .content3 .list .right{
+	width:195px;
+	float: left;
+	padding-left: 5px;
+}
+
+.tag-div .tag2 .content2 ul li {
+	background: url("http://cdn.verydemo.com/images/dot1.gif") no-repeat 3px 9px;
+	padding-left: 12px;
+	width:252px;
+	height:22px;
+	word-break:keep-all;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+ 
+.page-ul li {
+	border: 1px solid #9d9d9d;
+	height: 27px;
+	margin-left: 5px;
+	float: left;
+}
+
+.page-ul li a {
+	background: url("http://cdn.verydemo.com/images/pagebg.gif");
+	border: 1px solid #ffffff;
+	height: 25px;
+	padding: 0 6px 0 6px;
+	display: inline-block;
+}
+
+.page-ul li a.active {
+	background: #ff0000;
+	border: 1px solid #ff0000;
+	color: #fff;
+	font-weight: bold;
+}
+
+.page-ul li a.active:hover {
+	background: #ff0000;
+	border: 1px solid #ff0000;
+	color: #fff;
+	font-weight: bold;
+}
+
+.page-ul li a:hover {
+	background: #ff9933;
+	color: #fff;
+}
+
+ 
+.footer-div {
+	width: 1001px;
+	margin: 0 auto;
+	text-align: center;
+	padding: 20px 0 20px 0;
+}
+
+.main-div .left-div {
+width: 854px;
+float: left;
+overflow:hidden;
+}
+.main-div .right-div {
+  float: right;
+  width: 338px;
+}
+.tag-div .tag2 .content2 ul{
+ padding:0 0 3px 3px;
+}
+.tag-div .tag2 .content2 ul li {
+background: url("http://cdn.verydemo.com/images/dot1.gif") no-repeat 0px 9px;
+padding-left: 6px;
+width: 324px;
+height: 22px;
+word-break: keep-all;
+text-overflow: ellipsis;
+white-space: nowrap;
+overflow: hidden;
+}
+h1 {
+	font-family: "Microsoft YaHei", "黑体";
+	font-size: 24px;
+	line-height: 30px;
+	padding: 0;
+	margin: 0;
+}
+
+.content-title {
+	padding: 6px 0 0 0;
+}
+
+.content-title h1 {
+	line-height: 42px;
+}
+
+.content-info {
+	
+}
+
+.content-info .time {
+	color: #999999;
+	font-family: Arial;
+	line-height: 30px;
+}
+
+.content-info .kind {
+	color: #C62C1E;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.content-info a {
+	color: #C62C1E;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.content-content {
+	padding: 0px 10px 20px 0;
+	word-wrap: break-word;
+	word-break: normal;
+	white-space: normal;
+}
+.content-file ul li{
+  float: left;
+  background: #cccccc;
+  padding: 0px 20px 0 20px;
+  margin-right: 20px;
+}
+.content-yj {
+	width: 826px;
+	text-align: right;
+	padding: 0 14px 30px 0;
+}
+
+.content-yj span {
+	color: #777777;
+}
+
+.content-xg {
+	border-top: 1px solid #C62C1E;
+	width: 854px;
+	padding: 13px 0 13px 0;
+}
+
+.content-xg .xglj {
+	padding-bottom: 4px;
+	line-height:32px;
+}
+
+.content-xg ul li {
+	float: left;
+	width: 416px;
+	padding-right: 10px;
+	line-height:22px;
+	height:22px;
+	overflow:hidden;
+}
+
+.content-message {
+	border-top: 1px solid #C62C1E;
+	width: 840px;
+}
+
+.content-message .pl {
+	padding: 4px 0 13px 0;
+}
+
+.content-message .message {
+	border-top: 1px dotted #cccccc;
+	padding: 0 0 12px 0;
+	width: 700px;
+}
+
+.content-message .message .image {
+	padding: 18px 0 0 0;
+	float: left;
+}
+
+.content-message .message .text {
+	padding: 12px 0 0 15px;
+	float: left;
+	width: 640px;
+}
+
+.content-message .message .text p {
+	padding: 0;
+	margin: 0;
+}
+.message-form{
+	padding-left: 5px;
+}
+.message-form .title{
+ border: 1px solid #C62C1E;
+ width: 480px;
+}
+.message-form .text{
+ border: 1px solid #C62C1E;
+ width: 480px;
+ height:100px;
+ font-size: 12px;
+ line-height: 22px;
+}
+.message-form .code{
+ border: 1px solid #C62C1E;
+ width: 40px;
+}
+.pt6{
+  padding-top: 6px;
+}
+.download_div{
+ padding:25px 0 25px 0;
+}
+.download_div .dt_1{
+ font-size:14px;
+ font-weight:bold;
+ line-height:30px;
+}
+.download_div .dt_2{
+  line-height:18px;
+  padding:6px 20px 6px 20px;
+  background: #c3c3c3;
+}
+
+.tag-div .tag2 .content3 .list .right {
+width: 245px;
+}
+.tag-div .tag2 .content3 .list {
+padding: 4px 10px 2px 0px;
+}
+.top-div,.nav-div,.main-div{
+  width:1001px;
+}
+.main-div{
+  font-size:14px;
+}
+.main-div .left-div{
+ width:686px;
+ overflow:hidden;
+}
+.main-div .right-div{
+ width:302px;
+ overflow:hidden;
+}
+.tag-div .tag2 .content2 ul li {
+ width:280px;
+ background: url("http://cdn.verydemo.com/images/dot1.gif") no-repeat 0px 11px;
+ height: 26px;
+ line-height:26px;
+}
+.tag-div .tag2 .content2 ul li a{
+  color:#4CB7EA;
+  font-family: "微软雅黑";
+  font-weight: bolder;
+}
+.tag-div .tag2 .content2 ul li a:hover{
+  color: #646464;
+}
+.tag-div .tag2 .content3 .list .right {
+width: 221px;
+}

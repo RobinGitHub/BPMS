@@ -1,0 +1,28 @@
+﻿<dx:DXWindow
+    x:Class="BPMS.ServerManager.ServicesForm"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    Title="配置服务(BPMS.WinService)" Height="298.75" Width="491.25"
+    dx:ThemeManager.ThemeName="DXStyle" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+    >
+
+    <Grid>
+        <Label Content="协议：" HorizontalAlignment="Left" Margin="74,53,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cmbBindType" HorizontalAlignment="Left" Margin="113,53,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="IP：" HorizontalAlignment="Left" Margin="297,53,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtIP" HorizontalAlignment="Left" Height="23" Margin="326,53,0,0" TextWrapping="Wrap" Text="localhost" VerticalAlignment="Top" Width="120"/>
+        <Label Content="服务端口：" HorizontalAlignment="Left" Margin="50,119,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtServicePort" HorizontalAlignment="Left" Height="23" Margin="113,119,0,0" TextWrapping="Wrap" Text="8081" VerticalAlignment="Top" Width="120"/>
+        <Label Content="更新端口：" HorizontalAlignment="Left" Margin="260,119,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtUpdPort" HorizontalAlignment="Left" Height="23" Margin="326,119,0,0" TextWrapping="Wrap" Text="8082" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnInstall" Content="安装服务" HorizontalAlignment="Left" Margin="46,212,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnUnInstall" Content="卸载服务" HorizontalAlignment="Left" Margin="159,212,0,0" VerticalAlignment="Top" Width="74"/>
+        <Button x:Name="btnSave" Content="保存" HorizontalAlignment="Left" Margin="273,212,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnClose" Content="关闭" HorizontalAlignment="Left" Margin="371,212,0,0" VerticalAlignment="Top" Width="75"/>
+
+        <Label  x:Name="lblTips" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top">           
+        </Label>
+
+    </Grid>
+</dx:DXWindow>

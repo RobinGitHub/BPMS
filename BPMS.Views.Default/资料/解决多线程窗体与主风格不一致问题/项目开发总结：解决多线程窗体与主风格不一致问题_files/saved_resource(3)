@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link type="text/css" rel="stylesheet" href="http://images.dsd333.cn/zs_game2/style/main.css" />
+	<title>网页游戏大全</title>
+	<meta name="description" content="《天界》是由哥们网重磅推出的首款天眼玄幻网页游戏。该游戏以人、神、妖之间的渡劫轮回为背景，展现出华夏大陆上神农、轩辕、蚩尤三大部落争夺天下之主的壮阔史诗。玩家在游戏中将扮演承袭女娲天命的救世者，下界帮助大陆人民重归和平昌盛。同时，华丽的技能特效、灵动的法器空战、绚丽的紫羽翅膀、PK无限的洞天福地，也将为你带来不一样的上古洪荒传奇。" />
+	<meta name="keywords" content="网页游戏大全" />
+
+</head>
+
+<body>
+	<div class="wrap">
+		<div class="content">
+			<!--Begin:header-->
+			<div class="header clearfix">
+				<div class="logo">
+					<img src="http://images.dsd333.cn/zs_game2/images/logo.jpg" />
+				</div>
+				<div class="link">
+					<a class="a01" href="javascript:void(0);" onclick="addfavorite();return false;" title="加入收藏">加入收藏</a>
+					<a class="a02" id="HomePage" href="javascript:void(0);" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://http://zs.game2.cn');return false;" title="设为首页">设为首页</a>
+				</div>
+			</div>
+			<script language="javascript">
+	            if(!document.all) document.getElementById("HomePage").onclick = "return false;";
+	            function addfavorite()
+	            {
+	            	try{
+	            		window.external.addFavorite("http://http://zs.game2.cn/","网页游戏-网页游戏第一品牌");
+					}catch(e){
+						try{
+							window.sidebar.addPanel('-网页游戏大全', 'http://http://zs.game2.cn/', "");
+						}catch(e){ 
+		 				    alert("加入收藏失败，请使用Ctrl+D进行添加");
+						}
+					}
+	            }
+			</script>
+			
+			<!--End:header-->
+			<!--Begin:main-->
+			<div class="main clearfix">
+				<!--Begin:right-->
+				<div class="right">
+					<div class="banner">
+						<div class="btn">
+							<a href="http://http://zs.game2.cn/oifra3894.htm" title="进入游戏" target="_blank">进入游戏</a>
+						</div>
+						<img alt="" src="http://images.dsd333.cn/zs_game2/images/banner.jpg" />
+					</div>
+					<div class="main_div bg">
+						<div class="btn02">
+							<a href="http://http://zs.game2.cn/oifra3894.htm" target="_blank">天界</a>
+						</div>
+						<div class="btn03">
+							<a class="n01" href="http://http://zs.game2.cn/oifra3894.htm" title="注册游戏" target="_blank">注册游戏</a>
+							<a class="n02" href="http://http://zs.game2.cn/oifra3894.htm" title="进入游戏" target="_blank">进入游戏</a>
+						</div>
+					</div>
+					<div class="main_div">
+						<div class="btn02">
+							<a href="http://http://zs.game2.cn/oifra3894.htm" target="_blank">天界</a>
+						</div>
+						<div class="btn03">
+							<a class="n01" href="http://http://zs.game2.cn/oifra3894.htm" title="注册游戏" target="_blank">注册游戏</a>
+							<a class="n02" href="http://http://zs.game2.cn/oifra3894.htm" title="进入游戏" target="_blank">进入游戏</a>
+						</div>
+					</div>
+					<div class="main_div">
+						<div class="btn02">
+							<a href="http://http://zs.game2.cn/oifra3894.htm" target="_blank">天界</a>
+						</div>
+						<div class="btn03">
+							<a class="n01" href="http://http://zs.game2.cn/oifra3894.htm" title="注册游戏" target="_blank">注册游戏</a>
+							<a class="n02" href="http://http://zs.game2.cn/oifra3894.htm" title="进入游戏" target="_blank">进入游戏</a>
+						</div>
+					</div>
+
+				</div>
+				<!--End:right-->
+				<!--Begin:left-->
+				<div class="left">
+					<div class="left_list">
+						<a href="http://http://zs.game2.cn/oifra3894.htm" class="link_a"  target="_blank"></a>
+						<ul>
+							<li class="bg02" id='name_xianyu'>
+								<a href="http://http://zs.game2.cn/oifra3894.htm" target="_blank">天界</a>
+							</li>
+						</ul>
+						<p style="display:none1;" id='introduce_xianyu'>
+							《天界》是由哥们网重磅推出的首款天眼玄幻网页游戏。该游戏以人、神、妖之间的渡劫轮回为背景，展现出华夏大陆上神农、轩辕、蚩尤三大部落争夺天下之主的壮阔史诗。玩家在游戏中将扮演承袭女娲天命的救世者，下界帮助大陆人民重归和平昌盛。同时，华丽的技能特效、灵动的法器空战、绚丽的紫羽翅膀、PK无限的洞天福地，也将为你带来不一样的上古洪荒传奇。
+							<a href="http://http://zs.game2.cn/oifra3894.htm?aj_game" target="_blank" class="btn_login"></a>
+						</p>
+					</div>
+				</div>
+				<!--End:left-->
+			</div>
+			<!--End:main-->
+			<!--Begin:footer-->
+			<div class="footer">
+				<p>
+					<a href="http://http://zs.game2.cn/oifra3894.htm">
+						<img src="http://images.dsd333.cn/zs_game2/images/banner_b.gif" />
+					</a>
+				</p>
+				<p>
+					Copyright © 2008-2010  010-68608366　 权利申明  京ICP备09113349号-41 京网文[2010]0400-015号
+					<br>
+					趣游科技集团有限公司(
+					<a href="http://http://zs.game2.cn/qycompany.htm"  target="_blank" style="color:black;">公司简介</a>
+					)  北京市石景山区鲁谷路74号中国瑞达大厦22层
+				</p>
+			</div>
+			<!--End:footer-->
+		</div>
+	</div>
+	<div style="display:none"></div>
+</body>
+</html><!--createTime:2014-08-29 19:29:03-->

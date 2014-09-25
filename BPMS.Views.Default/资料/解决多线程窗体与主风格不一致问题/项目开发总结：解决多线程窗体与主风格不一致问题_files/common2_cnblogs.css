@@ -1,0 +1,97 @@
+
+
+
+
+.cnblogs_code
+{
+	background-color: #F5F5F5;
+	font-family:Courier New;
+	font-size: 12px;
+	border: 1px solid #CCCCCC;
+	padding: 5px;
+	
+	overflow:auto;
+	margin:5px 0px;
+	
+}
+.cnblogs_code pre{
+    font-size: 12px;
+    word-wrap: break-word;
+	white-space: pre-wrap;
+}
+.cnblogs_code span{
+	font-family:Courier New;
+	font-size: 12px;
+}
+.cnblogs_code_Collapse
+{
+	border-right: #808080 1px solid;
+	border-top: #808080 1px solid;
+	border-left: #808080 1px solid; 
+	border-bottom: #808080 1px solid; 
+	background-color: #FFF;
+	padding:2px;
+}
+.cnblogs_code_collapse
+{
+	border-right: #808080 1px solid;
+	border-top: #808080 1px solid;
+	border-left: #808080 1px solid; 
+	border-bottom: #808080 1px solid; 
+	background-color: #FFF;
+	padding:2px;
+}
+.cnblogs_code_hide{	display:none;}
+.code_img_closed{vertical-align:middle;padding-right:5px;}
+.code_img_opened{vertical-align:middle;padding-right:5px;}
+.cnblogs_code_open{margin-top:5px;}
+.codeLineNumber{
+    -moz-user-select: none;
+    color:#008080;
+	padding-right:10px;
+}
+.cnblogs_code ol{
+    margin-left:0px;  
+    color:#008080; 
+   
+}
+.cnblogs_code ol li {
+ list-style-image: none; 
+}
+.cnblogs_code ol li span{
+    color:#000;
+}
+
+
+.cnblogs_code_toolbar a:hover,
+.cnblogs_code_toolbar a:link,
+.cnblogs_code_toolbar a:visited,
+.cnblogs_code_toolbar a:active,
+.cnblogs_code_toolbar a:link img,
+.cnblogs_code_toolbar a:visited img
+{background-color:#F5F5F5 !important;border:none !important;}
+
+
+
+p{margin: 10px auto 10px auto;text-indent:0px;}
+
+.postBody p, .postCon p {margin: 10px auto 10px auto;}
+
+.postBody p, .postCon p {text-indent:0px;}
+
+.cnblogs_code span{line-height:1.5;}
+
+.login_tips a{text-decoration:underline;}
+
+#div_digg .diggnum{line-height:1.5em;}
+#div_digg .burynum {line-height:1.5em;}
+
+#green_channel a:link,#green_channel a:visited,#green_channel a:active {color:#FFFFFF;border:none;}
+
+.cnblogs_code{font-family:Courier New;font-size:12px;}
+.cnblogs_code pre{font-family:Courier New;font-size:12px;}
+.cnblogs_code span{font-family:Courier New;font-size:12px;}
+
+#cnblogs_post_body ul li{list-style:inherit;}
+#cnblogs_post_body{word-break:normal !important;}
+#cnblogs_post_body td{word-break:normal !important;}

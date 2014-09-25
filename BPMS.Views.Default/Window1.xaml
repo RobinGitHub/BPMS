@@ -1,0 +1,18 @@
+﻿<dx:DXWindow
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+        xmlns:dxca="http://schemas.devexpress.com/winfx/2008/xaml/carousel" 
+        xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui" 
+        xmlns:local="clr-namespace:BPMS.Views.Default" 
+        x:Class="BPMS.Views.Default.Window1"
+        Title="MainWindow" Height="350" Width="525"
+        SnapsToDevicePixels="True" UseLayoutRounding="True"
+        Style="{StaticResource ResourceKey=WindowStyle}"
+        >
+    <Grid>
+        <Button x:Name="btnTest" Content="Button" HorizontalAlignment="Left" Margin="35,28,0,0" VerticalAlignment="Top" Width="75"/>
+        <local:MaskControl x:Name="maskControl"/>
+    </Grid>
+</dx:DXWindow>

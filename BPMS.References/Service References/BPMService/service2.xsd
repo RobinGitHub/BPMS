@@ -1,0 +1,1429 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="Login">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="systemCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="account" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pwd" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LoginResult" type="xs:int" />
+        <xs:element minOccurs="0" name="systemId" type="xs:int" />
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmlRoleList" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogOut">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="systemId" type="xs:int" />
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogOutResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LogOutResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginChangePassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+        <xs:element minOccurs="0" name="oldPwd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="newPwd" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginChangePasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LoginChangePasswordResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogGetUserMenuList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="systemId" type="xs:int" />
+        <xs:element minOccurs="0" name="roleId" type="xs:int" />
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogGetUserMenuListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LogGetUserMenuListResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DataDictGetList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="systemId" type="xs:int" />
+        <xs:element minOccurs="0" name="dictType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DataDictGetListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DataDictGetListResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DataDictGetModel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DataDictGetModelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DataDictGetModelResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DataDictAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmlModel" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DataDictAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DataDictAddResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DataDictEdit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmlModel" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DataDictEditResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DataDictEditResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DataDictDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DataDictDeleteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DataDictDeleteResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DataDictNameIsRepeat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dictType" type="xs:int" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DataDictNameIsRepeatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DataDictNameIsRepeatResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DataDictCodeIsRepeat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dictType" type="xs:int" />
+        <xs:element minOccurs="0" name="code" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DataDictCodeIsRepeatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DataDictCodeIsRepeatResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EmployeeGetList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="category" type="xs:int" />
+        <xs:element minOccurs="0" name="orgaId" type="xs:int" />
+        <xs:element minOccurs="0" name="searchType" type="xs:int" />
+        <xs:element minOccurs="0" name="keyWord" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EmployeeGetListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EmployeeGetListResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EmployeeGetModel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EmployeeGetModelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EmployeeGetModelResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EmployeeAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmlModel" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EmployeeAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EmployeeAddResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EmployeeEdit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmlModel" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EmployeeEditResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EmployeeEditResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EmployeeCodeIsRepeat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="code" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EmployeeCodeIsRepeatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EmployeeCodeIsRepeatResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IPBlackGetList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IPBlackGetListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IPBlackGetListResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IPBlackGetModel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IPBlackGetModelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IPBlackGetModelResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IPBlackAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmlModel" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IPBlackAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IPBlackAddResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IPBlackEdit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmlModel" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IPBlackEditResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IPBlackEditResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IPBlackDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IPBlackDeleteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IPBlackDeleteResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MenuGetList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="systemId" type="xs:int" />
+        <xs:element minOccurs="0" name="parentId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MenuGetListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MenuGetListResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MenuGetModel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MenuGetModelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MenuGetModelResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MenuAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmlModel" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MenuAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MenuAddResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MenuEdit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmlModel" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MenuEditResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MenuEditResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MenuDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MenuDeleteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MenuDeleteResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MenuNameIsRepeat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="systemId" type="xs:int" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MenuNameIsRepeatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MenuNameIsRepeatResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MenuCodeIsRepeat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="systemId" type="xs:int" />
+        <xs:element minOccurs="0" name="code" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MenuCodeIsRepeatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MenuCodeIsRepeatResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OrganGetList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OrganGetListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OrganGetListResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OrganGetModel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OrganGetModelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OrganGetModelResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OrganAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmlModel" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OrganAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OrganAddResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OrganEdit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmlModel" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OrganEditResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OrganEditResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OrganDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OrganDeleteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OrganDeleteResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OrganNameIsRepeat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="parentId" type="xs:int" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OrganNameIsRepeatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OrganNameIsRepeatResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OrganCodeIsRepeat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="parentId" type="xs:int" />
+        <xs:element minOccurs="0" name="code" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OrganCodeIsRepeatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OrganCodeIsRepeatResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PubGetSystemList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PubGetSystemListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PubGetSystemListResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PubGetRoleList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="systemId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PubGetRoleListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PubGetRoleListResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PubGetAllPurview">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="systemId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PubGetAllPurviewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PubGetAllPurviewResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PubGetUserPurviewList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="systemId" type="xs:int" />
+        <xs:element minOccurs="0" name="roleId" type="xs:int" />
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PubGetUserPurviewListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PubGetUserPurviewListResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PubGetUserByDeptId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deptId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PubGetUserByDeptIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PubGetUserByDeptIdResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PurviewGetModuleList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="systemId" type="xs:int" />
+        <xs:element minOccurs="0" name="moduleName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="moduleCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isEnable" type="xs:int" />
+        <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PurviewGetModuleListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PurviewGetModuleListResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PurviewGetFunctionList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="systemId" type="xs:int" />
+        <xs:element minOccurs="0" name="moduleId" type="xs:int" />
+        <xs:element minOccurs="0" name="functionName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="functionCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isEnable" type="xs:int" />
+        <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PurviewGetFunctionListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PurviewGetFunctionListResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PurviewGetActionList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="systemId" type="xs:int" />
+        <xs:element minOccurs="0" name="moduleId" type="xs:int" />
+        <xs:element minOccurs="0" name="functionId" type="xs:int" />
+        <xs:element minOccurs="0" name="actionName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="actionCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isEnable" type="xs:int" />
+        <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PurviewGetActionListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PurviewGetActionListResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PurviewGetListByParentId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="systemId" type="xs:int" />
+        <xs:element minOccurs="0" name="parentId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PurviewGetListByParentIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PurviewGetListByParentIdResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PurviewGetModel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PurviewGetModelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PurviewGetModelResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PurviewAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmlModel" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PurviewAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PurviewAddResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PurviewEdit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmlModel" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PurviewEditResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PurviewEditResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PurviewDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PurviewDeleteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PurviewDeleteResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PurviewNameIsRepeat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="systemId" type="xs:int" />
+        <xs:element minOccurs="0" name="parentId" type="xs:int" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PurviewNameIsRepeatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PurviewNameIsRepeatResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PurviewCodeIsRepeat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="systemId" type="xs:int" />
+        <xs:element minOccurs="0" name="parentId" type="xs:int" />
+        <xs:element minOccurs="0" name="code" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PurviewCodeIsRepeatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PurviewCodeIsRepeatResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RoleGetList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="systemId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RoleGetListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RoleGetListResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RoleGetModel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RoleGetModelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RoleGetModelResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RoleAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmlModel" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RoleAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RoleAddResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RoleEdit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmlModel" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RoleEditResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RoleEditResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RoleDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RoleDeleteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RoleDeleteResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RoleNameIsRepeat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="systemId" type="xs:int" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RoleNameIsRepeatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RoleNameIsRepeatResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RoleCodeIsRepeat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="systemId" type="xs:int" />
+        <xs:element minOccurs="0" name="code" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RoleCodeIsRepeatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RoleCodeIsRepeatResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RolePurviewSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="roleId" type="xs:int" />
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="purviewIdList" nillable="true" type="q1:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RolePurviewSetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RolePurviewSetResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RoleGetPurviewList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="systemId" type="xs:int" />
+        <xs:element minOccurs="0" name="roleId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RoleGetPurviewListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RoleGetPurviewListResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RoleMembers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="roleId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RoleMembersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RoleMembersResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RoleMemberAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="roleId" type="xs:int" />
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="userIdList" nillable="true" type="q2:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RoleMemberAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RoleMemberAddResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RoleMemberDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="roleId" type="xs:int" />
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RoleMemberDeleteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RoleMemberDeleteResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCacheKeyList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="keyWord" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCacheKeyListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCacheKeyListResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CacheClear">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="lstKeyWord" nillable="true" type="q3:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CacheClearResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CacheClearResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SysLogGetList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="operationType" type="xs:int" />
+        <xs:element minOccurs="0" name="moduleName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="account" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SysLogGetListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SysLogGetListResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SysLogClear">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SysLogClearResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SysLogClearResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SysLoginLogGetList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="account" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SysLoginLogGetListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SysLoginLogGetListResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SysLoginLogClear">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SysLoginLogClearResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SysLoginLogClearResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SystemExceptionGetList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SystemExceptionGetListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SystemExceptionGetListResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SystemExceptionClear">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SystemExceptionClearResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SystemExceptionClearResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SystemGetList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SystemGetListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SystemGetListResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SystemGetModel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SystemGetModelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SystemGetModelResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SystemAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmlModel" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SystemAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SystemAddResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SystemEdit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmlModel" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SystemEditResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SystemEditResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SystemDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SystemDeleteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SystemDeleteResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SystemNameIsRepeat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SystemNameIsRepeatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SystemNameIsRepeatResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SystemCodeIsRepeat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="code" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SystemCodeIsRepeatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SystemCodeIsRepeatResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserGetList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="searchType" type="xs:int" />
+        <xs:element minOccurs="0" name="keyWord" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isEnable" type="xs:int" />
+        <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserGetListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserGetListResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserGetModel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserGetModelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserGetModelResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmlModel" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserAddResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserEdit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="xmlModel" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserEditResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserEditResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserAccountIsRepeat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="account" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserAccountIsRepeatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserAccountIsRepeatResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserCodeIsRepeat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="code" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserCodeIsRepeatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserCodeIsRepeatResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserPasswordReset">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserPasswordResetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserPasswordResetResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserGetPurviewList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="systemId" type="xs:int" />
+        <xs:element minOccurs="0" name="roleId" type="xs:int" />
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserGetPurviewListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserGetPurviewListResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserPurviewSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="lstModel" nillable="true" type="q4:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserPurviewSetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserPurviewSetResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserPurviewReset">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="systemId" type="xs:int" />
+        <xs:element minOccurs="0" name="roleId" type="xs:int" />
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserPurviewResetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserPurviewResetResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserRoleSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="systemId" type="xs:int" />
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="lstRoleId" nillable="true" type="q5:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserRoleSetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserRoleSetResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserRoleGetList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xmlCredentials" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="systemId" type="xs:int" />
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserRoleGetListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserRoleGetListResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

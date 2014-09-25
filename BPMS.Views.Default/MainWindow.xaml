@@ -1,0 +1,46 @@
+﻿<dx:DXWindow
+    x:Class="BPMS.Views.Default.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:BPMS.Views.Default"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxd="http://schemas.devexpress.com/winfx/2008/xaml/docking"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    Title="DXApplication" Height="600" Width="800"
+    SnapsToDevicePixels="True" UseLayoutRounding="True"
+    WindowStartupLocation="CenterScreen"
+    Style="{StaticResource ResourceKey=WindowStyle}"
+    >
+    <Window.Resources>
+
+    </Window.Resources>
+
+    <dxd:DockLayoutManager x:Name="dockLayoutManager">
+        <dxd:LayoutGroup>
+            <dxd:LayoutGroup Orientation="Vertical"  ItemWidth="3*">
+                <dxd:DocumentGroup ItemHeight="3*">
+                    <dxd:DocumentPanel Caption="Document1" ItemHeight="3*">
+                        <TextBox BorderThickness="0" />
+                    </dxd:DocumentPanel>
+                </dxd:DocumentGroup>
+                <dxd:LayoutPanel Caption="DetailView" ItemHeight="2*">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="0" />
+                        </Grid.ColumnDefinitions>
+                        <TextBox BorderThickness="0" />
+                    </Grid>
+                </dxd:LayoutPanel>
+            </dxd:LayoutGroup>
+            <dxd:TabbedGroup ItemWidth="*"/>
+        </dxd:LayoutGroup>
+        <dxd:DockLayoutManager.AutoHideGroups>
+            <dxd:AutoHideGroup >
+                <dxd:LayoutPanel Caption="Navigation" ItemWidth="200" Padding="1">
+                    <TextBox BorderThickness="0" />
+                </dxd:LayoutPanel>
+            </dxd:AutoHideGroup>
+        </dxd:DockLayoutManager.AutoHideGroups>
+    </dxd:DockLayoutManager>
+</dx:DXWindow>

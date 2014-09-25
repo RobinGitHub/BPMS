@@ -1,0 +1,1725 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_LogOut_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogOut" />
+  </wsdl:message>
+  <wsdl:message name="IService_LogOut_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_LoginChangePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoginChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="IService_LoginChangePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_LogGetUserMenuList_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogGetUserMenuList" />
+  </wsdl:message>
+  <wsdl:message name="IService_LogGetUserMenuList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogGetUserMenuListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DataDictGetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:DataDictGetList" />
+  </wsdl:message>
+  <wsdl:message name="IService_DataDictGetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DataDictGetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DataDictGetModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:DataDictGetModel" />
+  </wsdl:message>
+  <wsdl:message name="IService_DataDictGetModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DataDictGetModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DataDictAdd_InputMessage">
+    <wsdl:part name="parameters" element="tns:DataDictAdd" />
+  </wsdl:message>
+  <wsdl:message name="IService_DataDictAdd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DataDictAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DataDictEdit_InputMessage">
+    <wsdl:part name="parameters" element="tns:DataDictEdit" />
+  </wsdl:message>
+  <wsdl:message name="IService_DataDictEdit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DataDictEditResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DataDictDelete_InputMessage">
+    <wsdl:part name="parameters" element="tns:DataDictDelete" />
+  </wsdl:message>
+  <wsdl:message name="IService_DataDictDelete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DataDictDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DataDictNameIsRepeat_InputMessage">
+    <wsdl:part name="parameters" element="tns:DataDictNameIsRepeat" />
+  </wsdl:message>
+  <wsdl:message name="IService_DataDictNameIsRepeat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DataDictNameIsRepeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DataDictCodeIsRepeat_InputMessage">
+    <wsdl:part name="parameters" element="tns:DataDictCodeIsRepeat" />
+  </wsdl:message>
+  <wsdl:message name="IService_DataDictCodeIsRepeat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DataDictCodeIsRepeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EmployeeGetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:EmployeeGetList" />
+  </wsdl:message>
+  <wsdl:message name="IService_EmployeeGetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EmployeeGetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EmployeeGetModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:EmployeeGetModel" />
+  </wsdl:message>
+  <wsdl:message name="IService_EmployeeGetModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EmployeeGetModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EmployeeAdd_InputMessage">
+    <wsdl:part name="parameters" element="tns:EmployeeAdd" />
+  </wsdl:message>
+  <wsdl:message name="IService_EmployeeAdd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EmployeeAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EmployeeEdit_InputMessage">
+    <wsdl:part name="parameters" element="tns:EmployeeEdit" />
+  </wsdl:message>
+  <wsdl:message name="IService_EmployeeEdit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EmployeeEditResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EmployeeCodeIsRepeat_InputMessage">
+    <wsdl:part name="parameters" element="tns:EmployeeCodeIsRepeat" />
+  </wsdl:message>
+  <wsdl:message name="IService_EmployeeCodeIsRepeat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EmployeeCodeIsRepeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_IPBlackGetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:IPBlackGetList" />
+  </wsdl:message>
+  <wsdl:message name="IService_IPBlackGetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IPBlackGetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_IPBlackGetModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:IPBlackGetModel" />
+  </wsdl:message>
+  <wsdl:message name="IService_IPBlackGetModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IPBlackGetModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_IPBlackAdd_InputMessage">
+    <wsdl:part name="parameters" element="tns:IPBlackAdd" />
+  </wsdl:message>
+  <wsdl:message name="IService_IPBlackAdd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IPBlackAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_IPBlackEdit_InputMessage">
+    <wsdl:part name="parameters" element="tns:IPBlackEdit" />
+  </wsdl:message>
+  <wsdl:message name="IService_IPBlackEdit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IPBlackEditResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_IPBlackDelete_InputMessage">
+    <wsdl:part name="parameters" element="tns:IPBlackDelete" />
+  </wsdl:message>
+  <wsdl:message name="IService_IPBlackDelete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IPBlackDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_MenuGetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:MenuGetList" />
+  </wsdl:message>
+  <wsdl:message name="IService_MenuGetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MenuGetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_MenuGetModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:MenuGetModel" />
+  </wsdl:message>
+  <wsdl:message name="IService_MenuGetModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MenuGetModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_MenuAdd_InputMessage">
+    <wsdl:part name="parameters" element="tns:MenuAdd" />
+  </wsdl:message>
+  <wsdl:message name="IService_MenuAdd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MenuAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_MenuEdit_InputMessage">
+    <wsdl:part name="parameters" element="tns:MenuEdit" />
+  </wsdl:message>
+  <wsdl:message name="IService_MenuEdit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MenuEditResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_MenuDelete_InputMessage">
+    <wsdl:part name="parameters" element="tns:MenuDelete" />
+  </wsdl:message>
+  <wsdl:message name="IService_MenuDelete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MenuDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_MenuNameIsRepeat_InputMessage">
+    <wsdl:part name="parameters" element="tns:MenuNameIsRepeat" />
+  </wsdl:message>
+  <wsdl:message name="IService_MenuNameIsRepeat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MenuNameIsRepeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_MenuCodeIsRepeat_InputMessage">
+    <wsdl:part name="parameters" element="tns:MenuCodeIsRepeat" />
+  </wsdl:message>
+  <wsdl:message name="IService_MenuCodeIsRepeat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MenuCodeIsRepeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_OrganGetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:OrganGetList" />
+  </wsdl:message>
+  <wsdl:message name="IService_OrganGetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OrganGetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_OrganGetModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:OrganGetModel" />
+  </wsdl:message>
+  <wsdl:message name="IService_OrganGetModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OrganGetModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_OrganAdd_InputMessage">
+    <wsdl:part name="parameters" element="tns:OrganAdd" />
+  </wsdl:message>
+  <wsdl:message name="IService_OrganAdd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OrganAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_OrganEdit_InputMessage">
+    <wsdl:part name="parameters" element="tns:OrganEdit" />
+  </wsdl:message>
+  <wsdl:message name="IService_OrganEdit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OrganEditResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_OrganDelete_InputMessage">
+    <wsdl:part name="parameters" element="tns:OrganDelete" />
+  </wsdl:message>
+  <wsdl:message name="IService_OrganDelete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OrganDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_OrganNameIsRepeat_InputMessage">
+    <wsdl:part name="parameters" element="tns:OrganNameIsRepeat" />
+  </wsdl:message>
+  <wsdl:message name="IService_OrganNameIsRepeat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OrganNameIsRepeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_OrganCodeIsRepeat_InputMessage">
+    <wsdl:part name="parameters" element="tns:OrganCodeIsRepeat" />
+  </wsdl:message>
+  <wsdl:message name="IService_OrganCodeIsRepeat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OrganCodeIsRepeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PubGetSystemList_InputMessage">
+    <wsdl:part name="parameters" element="tns:PubGetSystemList" />
+  </wsdl:message>
+  <wsdl:message name="IService_PubGetSystemList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PubGetSystemListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PubGetRoleList_InputMessage">
+    <wsdl:part name="parameters" element="tns:PubGetRoleList" />
+  </wsdl:message>
+  <wsdl:message name="IService_PubGetRoleList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PubGetRoleListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PubGetAllPurview_InputMessage">
+    <wsdl:part name="parameters" element="tns:PubGetAllPurview" />
+  </wsdl:message>
+  <wsdl:message name="IService_PubGetAllPurview_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PubGetAllPurviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PubGetUserPurviewList_InputMessage">
+    <wsdl:part name="parameters" element="tns:PubGetUserPurviewList" />
+  </wsdl:message>
+  <wsdl:message name="IService_PubGetUserPurviewList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PubGetUserPurviewListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PubGetUserByDeptId_InputMessage">
+    <wsdl:part name="parameters" element="tns:PubGetUserByDeptId" />
+  </wsdl:message>
+  <wsdl:message name="IService_PubGetUserByDeptId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PubGetUserByDeptIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PurviewGetModuleList_InputMessage">
+    <wsdl:part name="parameters" element="tns:PurviewGetModuleList" />
+  </wsdl:message>
+  <wsdl:message name="IService_PurviewGetModuleList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PurviewGetModuleListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PurviewGetFunctionList_InputMessage">
+    <wsdl:part name="parameters" element="tns:PurviewGetFunctionList" />
+  </wsdl:message>
+  <wsdl:message name="IService_PurviewGetFunctionList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PurviewGetFunctionListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PurviewGetActionList_InputMessage">
+    <wsdl:part name="parameters" element="tns:PurviewGetActionList" />
+  </wsdl:message>
+  <wsdl:message name="IService_PurviewGetActionList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PurviewGetActionListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PurviewGetListByParentId_InputMessage">
+    <wsdl:part name="parameters" element="tns:PurviewGetListByParentId" />
+  </wsdl:message>
+  <wsdl:message name="IService_PurviewGetListByParentId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PurviewGetListByParentIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PurviewGetModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:PurviewGetModel" />
+  </wsdl:message>
+  <wsdl:message name="IService_PurviewGetModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PurviewGetModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PurviewAdd_InputMessage">
+    <wsdl:part name="parameters" element="tns:PurviewAdd" />
+  </wsdl:message>
+  <wsdl:message name="IService_PurviewAdd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PurviewAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PurviewEdit_InputMessage">
+    <wsdl:part name="parameters" element="tns:PurviewEdit" />
+  </wsdl:message>
+  <wsdl:message name="IService_PurviewEdit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PurviewEditResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PurviewDelete_InputMessage">
+    <wsdl:part name="parameters" element="tns:PurviewDelete" />
+  </wsdl:message>
+  <wsdl:message name="IService_PurviewDelete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PurviewDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PurviewNameIsRepeat_InputMessage">
+    <wsdl:part name="parameters" element="tns:PurviewNameIsRepeat" />
+  </wsdl:message>
+  <wsdl:message name="IService_PurviewNameIsRepeat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PurviewNameIsRepeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PurviewCodeIsRepeat_InputMessage">
+    <wsdl:part name="parameters" element="tns:PurviewCodeIsRepeat" />
+  </wsdl:message>
+  <wsdl:message name="IService_PurviewCodeIsRepeat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PurviewCodeIsRepeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RoleGetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:RoleGetList" />
+  </wsdl:message>
+  <wsdl:message name="IService_RoleGetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RoleGetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RoleGetModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:RoleGetModel" />
+  </wsdl:message>
+  <wsdl:message name="IService_RoleGetModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RoleGetModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RoleAdd_InputMessage">
+    <wsdl:part name="parameters" element="tns:RoleAdd" />
+  </wsdl:message>
+  <wsdl:message name="IService_RoleAdd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RoleAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RoleEdit_InputMessage">
+    <wsdl:part name="parameters" element="tns:RoleEdit" />
+  </wsdl:message>
+  <wsdl:message name="IService_RoleEdit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RoleEditResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RoleDelete_InputMessage">
+    <wsdl:part name="parameters" element="tns:RoleDelete" />
+  </wsdl:message>
+  <wsdl:message name="IService_RoleDelete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RoleDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RoleNameIsRepeat_InputMessage">
+    <wsdl:part name="parameters" element="tns:RoleNameIsRepeat" />
+  </wsdl:message>
+  <wsdl:message name="IService_RoleNameIsRepeat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RoleNameIsRepeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RoleCodeIsRepeat_InputMessage">
+    <wsdl:part name="parameters" element="tns:RoleCodeIsRepeat" />
+  </wsdl:message>
+  <wsdl:message name="IService_RoleCodeIsRepeat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RoleCodeIsRepeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RolePurviewSet_InputMessage">
+    <wsdl:part name="parameters" element="tns:RolePurviewSet" />
+  </wsdl:message>
+  <wsdl:message name="IService_RolePurviewSet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RolePurviewSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RoleGetPurviewList_InputMessage">
+    <wsdl:part name="parameters" element="tns:RoleGetPurviewList" />
+  </wsdl:message>
+  <wsdl:message name="IService_RoleGetPurviewList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RoleGetPurviewListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RoleMembers_InputMessage">
+    <wsdl:part name="parameters" element="tns:RoleMembers" />
+  </wsdl:message>
+  <wsdl:message name="IService_RoleMembers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RoleMembersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RoleMemberAdd_InputMessage">
+    <wsdl:part name="parameters" element="tns:RoleMemberAdd" />
+  </wsdl:message>
+  <wsdl:message name="IService_RoleMemberAdd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RoleMemberAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RoleMemberDelete_InputMessage">
+    <wsdl:part name="parameters" element="tns:RoleMemberDelete" />
+  </wsdl:message>
+  <wsdl:message name="IService_RoleMemberDelete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RoleMemberDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetCacheKeyList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCacheKeyList" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetCacheKeyList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCacheKeyListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_CacheClear_InputMessage">
+    <wsdl:part name="parameters" element="tns:CacheClear" />
+  </wsdl:message>
+  <wsdl:message name="IService_CacheClear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CacheClearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SysLogGetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SysLogGetList" />
+  </wsdl:message>
+  <wsdl:message name="IService_SysLogGetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SysLogGetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SysLogClear_InputMessage">
+    <wsdl:part name="parameters" element="tns:SysLogClear" />
+  </wsdl:message>
+  <wsdl:message name="IService_SysLogClear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SysLogClearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SysLoginLogGetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SysLoginLogGetList" />
+  </wsdl:message>
+  <wsdl:message name="IService_SysLoginLogGetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SysLoginLogGetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SysLoginLogClear_InputMessage">
+    <wsdl:part name="parameters" element="tns:SysLoginLogClear" />
+  </wsdl:message>
+  <wsdl:message name="IService_SysLoginLogClear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SysLoginLogClearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SystemExceptionGetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SystemExceptionGetList" />
+  </wsdl:message>
+  <wsdl:message name="IService_SystemExceptionGetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SystemExceptionGetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SystemExceptionClear_InputMessage">
+    <wsdl:part name="parameters" element="tns:SystemExceptionClear" />
+  </wsdl:message>
+  <wsdl:message name="IService_SystemExceptionClear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SystemExceptionClearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SystemGetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SystemGetList" />
+  </wsdl:message>
+  <wsdl:message name="IService_SystemGetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SystemGetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SystemGetModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:SystemGetModel" />
+  </wsdl:message>
+  <wsdl:message name="IService_SystemGetModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SystemGetModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SystemAdd_InputMessage">
+    <wsdl:part name="parameters" element="tns:SystemAdd" />
+  </wsdl:message>
+  <wsdl:message name="IService_SystemAdd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SystemAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SystemEdit_InputMessage">
+    <wsdl:part name="parameters" element="tns:SystemEdit" />
+  </wsdl:message>
+  <wsdl:message name="IService_SystemEdit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SystemEditResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SystemDelete_InputMessage">
+    <wsdl:part name="parameters" element="tns:SystemDelete" />
+  </wsdl:message>
+  <wsdl:message name="IService_SystemDelete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SystemDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SystemNameIsRepeat_InputMessage">
+    <wsdl:part name="parameters" element="tns:SystemNameIsRepeat" />
+  </wsdl:message>
+  <wsdl:message name="IService_SystemNameIsRepeat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SystemNameIsRepeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SystemCodeIsRepeat_InputMessage">
+    <wsdl:part name="parameters" element="tns:SystemCodeIsRepeat" />
+  </wsdl:message>
+  <wsdl:message name="IService_SystemCodeIsRepeat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SystemCodeIsRepeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UserGetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserGetList" />
+  </wsdl:message>
+  <wsdl:message name="IService_UserGetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserGetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UserGetModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserGetModel" />
+  </wsdl:message>
+  <wsdl:message name="IService_UserGetModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserGetModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UserAdd_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserAdd" />
+  </wsdl:message>
+  <wsdl:message name="IService_UserAdd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UserEdit_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserEdit" />
+  </wsdl:message>
+  <wsdl:message name="IService_UserEdit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserEditResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UserAccountIsRepeat_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserAccountIsRepeat" />
+  </wsdl:message>
+  <wsdl:message name="IService_UserAccountIsRepeat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserAccountIsRepeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UserCodeIsRepeat_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserCodeIsRepeat" />
+  </wsdl:message>
+  <wsdl:message name="IService_UserCodeIsRepeat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserCodeIsRepeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UserPasswordReset_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserPasswordReset" />
+  </wsdl:message>
+  <wsdl:message name="IService_UserPasswordReset_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserPasswordResetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UserGetPurviewList_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserGetPurviewList" />
+  </wsdl:message>
+  <wsdl:message name="IService_UserGetPurviewList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserGetPurviewListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UserPurviewSet_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserPurviewSet" />
+  </wsdl:message>
+  <wsdl:message name="IService_UserPurviewSet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserPurviewSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UserPurviewReset_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserPurviewReset" />
+  </wsdl:message>
+  <wsdl:message name="IService_UserPurviewReset_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserPurviewResetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UserRoleSet_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserRoleSet" />
+  </wsdl:message>
+  <wsdl:message name="IService_UserRoleSet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserRoleSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UserRoleGetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserRoleGetList" />
+  </wsdl:message>
+  <wsdl:message name="IService_UserRoleGetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserRoleGetListResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService">
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/Login" message="tns:IService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/LoginResponse" message="tns:IService_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogOut">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/LogOut" message="tns:IService_LogOut_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/LogOutResponse" message="tns:IService_LogOut_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginChangePassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/LoginChangePassword" message="tns:IService_LoginChangePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/LoginChangePasswordResponse" message="tns:IService_LoginChangePassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogGetUserMenuList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/LogGetUserMenuList" message="tns:IService_LogGetUserMenuList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/LogGetUserMenuListResponse" message="tns:IService_LogGetUserMenuList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DataDictGetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/DataDictGetList" message="tns:IService_DataDictGetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/DataDictGetListResponse" message="tns:IService_DataDictGetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DataDictGetModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/DataDictGetModel" message="tns:IService_DataDictGetModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/DataDictGetModelResponse" message="tns:IService_DataDictGetModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DataDictAdd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/DataDictAdd" message="tns:IService_DataDictAdd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/DataDictAddResponse" message="tns:IService_DataDictAdd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DataDictEdit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/DataDictEdit" message="tns:IService_DataDictEdit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/DataDictEditResponse" message="tns:IService_DataDictEdit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DataDictDelete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/DataDictDelete" message="tns:IService_DataDictDelete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/DataDictDeleteResponse" message="tns:IService_DataDictDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DataDictNameIsRepeat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/DataDictNameIsRepeat" message="tns:IService_DataDictNameIsRepeat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/DataDictNameIsRepeatResponse" message="tns:IService_DataDictNameIsRepeat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DataDictCodeIsRepeat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/DataDictCodeIsRepeat" message="tns:IService_DataDictCodeIsRepeat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/DataDictCodeIsRepeatResponse" message="tns:IService_DataDictCodeIsRepeat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EmployeeGetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EmployeeGetList" message="tns:IService_EmployeeGetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EmployeeGetListResponse" message="tns:IService_EmployeeGetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EmployeeGetModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EmployeeGetModel" message="tns:IService_EmployeeGetModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EmployeeGetModelResponse" message="tns:IService_EmployeeGetModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EmployeeAdd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EmployeeAdd" message="tns:IService_EmployeeAdd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EmployeeAddResponse" message="tns:IService_EmployeeAdd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EmployeeEdit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EmployeeEdit" message="tns:IService_EmployeeEdit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EmployeeEditResponse" message="tns:IService_EmployeeEdit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EmployeeCodeIsRepeat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EmployeeCodeIsRepeat" message="tns:IService_EmployeeCodeIsRepeat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EmployeeCodeIsRepeatResponse" message="tns:IService_EmployeeCodeIsRepeat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IPBlackGetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/IPBlackGetList" message="tns:IService_IPBlackGetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/IPBlackGetListResponse" message="tns:IService_IPBlackGetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IPBlackGetModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/IPBlackGetModel" message="tns:IService_IPBlackGetModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/IPBlackGetModelResponse" message="tns:IService_IPBlackGetModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IPBlackAdd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/IPBlackAdd" message="tns:IService_IPBlackAdd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/IPBlackAddResponse" message="tns:IService_IPBlackAdd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IPBlackEdit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/IPBlackEdit" message="tns:IService_IPBlackEdit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/IPBlackEditResponse" message="tns:IService_IPBlackEdit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IPBlackDelete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/IPBlackDelete" message="tns:IService_IPBlackDelete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/IPBlackDeleteResponse" message="tns:IService_IPBlackDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MenuGetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/MenuGetList" message="tns:IService_MenuGetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/MenuGetListResponse" message="tns:IService_MenuGetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MenuGetModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/MenuGetModel" message="tns:IService_MenuGetModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/MenuGetModelResponse" message="tns:IService_MenuGetModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MenuAdd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/MenuAdd" message="tns:IService_MenuAdd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/MenuAddResponse" message="tns:IService_MenuAdd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MenuEdit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/MenuEdit" message="tns:IService_MenuEdit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/MenuEditResponse" message="tns:IService_MenuEdit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MenuDelete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/MenuDelete" message="tns:IService_MenuDelete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/MenuDeleteResponse" message="tns:IService_MenuDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MenuNameIsRepeat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/MenuNameIsRepeat" message="tns:IService_MenuNameIsRepeat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/MenuNameIsRepeatResponse" message="tns:IService_MenuNameIsRepeat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MenuCodeIsRepeat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/MenuCodeIsRepeat" message="tns:IService_MenuCodeIsRepeat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/MenuCodeIsRepeatResponse" message="tns:IService_MenuCodeIsRepeat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OrganGetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/OrganGetList" message="tns:IService_OrganGetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/OrganGetListResponse" message="tns:IService_OrganGetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OrganGetModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/OrganGetModel" message="tns:IService_OrganGetModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/OrganGetModelResponse" message="tns:IService_OrganGetModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OrganAdd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/OrganAdd" message="tns:IService_OrganAdd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/OrganAddResponse" message="tns:IService_OrganAdd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OrganEdit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/OrganEdit" message="tns:IService_OrganEdit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/OrganEditResponse" message="tns:IService_OrganEdit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OrganDelete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/OrganDelete" message="tns:IService_OrganDelete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/OrganDeleteResponse" message="tns:IService_OrganDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OrganNameIsRepeat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/OrganNameIsRepeat" message="tns:IService_OrganNameIsRepeat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/OrganNameIsRepeatResponse" message="tns:IService_OrganNameIsRepeat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OrganCodeIsRepeat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/OrganCodeIsRepeat" message="tns:IService_OrganCodeIsRepeat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/OrganCodeIsRepeatResponse" message="tns:IService_OrganCodeIsRepeat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PubGetSystemList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/PubGetSystemList" message="tns:IService_PubGetSystemList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/PubGetSystemListResponse" message="tns:IService_PubGetSystemList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PubGetRoleList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/PubGetRoleList" message="tns:IService_PubGetRoleList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/PubGetRoleListResponse" message="tns:IService_PubGetRoleList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PubGetAllPurview">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/PubGetAllPurview" message="tns:IService_PubGetAllPurview_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/PubGetAllPurviewResponse" message="tns:IService_PubGetAllPurview_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PubGetUserPurviewList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/PubGetUserPurviewList" message="tns:IService_PubGetUserPurviewList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/PubGetUserPurviewListResponse" message="tns:IService_PubGetUserPurviewList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PubGetUserByDeptId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/PubGetUserByDeptId" message="tns:IService_PubGetUserByDeptId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/PubGetUserByDeptIdResponse" message="tns:IService_PubGetUserByDeptId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PurviewGetModuleList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/PurviewGetModuleList" message="tns:IService_PurviewGetModuleList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/PurviewGetModuleListResponse" message="tns:IService_PurviewGetModuleList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PurviewGetFunctionList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/PurviewGetFunctionList" message="tns:IService_PurviewGetFunctionList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/PurviewGetFunctionListResponse" message="tns:IService_PurviewGetFunctionList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PurviewGetActionList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/PurviewGetActionList" message="tns:IService_PurviewGetActionList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/PurviewGetActionListResponse" message="tns:IService_PurviewGetActionList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PurviewGetListByParentId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/PurviewGetListByParentId" message="tns:IService_PurviewGetListByParentId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/PurviewGetListByParentIdResponse" message="tns:IService_PurviewGetListByParentId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PurviewGetModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/PurviewGetModel" message="tns:IService_PurviewGetModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/PurviewGetModelResponse" message="tns:IService_PurviewGetModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PurviewAdd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/PurviewAdd" message="tns:IService_PurviewAdd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/PurviewAddResponse" message="tns:IService_PurviewAdd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PurviewEdit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/PurviewEdit" message="tns:IService_PurviewEdit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/PurviewEditResponse" message="tns:IService_PurviewEdit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PurviewDelete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/PurviewDelete" message="tns:IService_PurviewDelete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/PurviewDeleteResponse" message="tns:IService_PurviewDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PurviewNameIsRepeat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/PurviewNameIsRepeat" message="tns:IService_PurviewNameIsRepeat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/PurviewNameIsRepeatResponse" message="tns:IService_PurviewNameIsRepeat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PurviewCodeIsRepeat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/PurviewCodeIsRepeat" message="tns:IService_PurviewCodeIsRepeat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/PurviewCodeIsRepeatResponse" message="tns:IService_PurviewCodeIsRepeat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RoleGetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/RoleGetList" message="tns:IService_RoleGetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/RoleGetListResponse" message="tns:IService_RoleGetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RoleGetModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/RoleGetModel" message="tns:IService_RoleGetModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/RoleGetModelResponse" message="tns:IService_RoleGetModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RoleAdd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/RoleAdd" message="tns:IService_RoleAdd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/RoleAddResponse" message="tns:IService_RoleAdd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RoleEdit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/RoleEdit" message="tns:IService_RoleEdit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/RoleEditResponse" message="tns:IService_RoleEdit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RoleDelete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/RoleDelete" message="tns:IService_RoleDelete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/RoleDeleteResponse" message="tns:IService_RoleDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RoleNameIsRepeat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/RoleNameIsRepeat" message="tns:IService_RoleNameIsRepeat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/RoleNameIsRepeatResponse" message="tns:IService_RoleNameIsRepeat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RoleCodeIsRepeat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/RoleCodeIsRepeat" message="tns:IService_RoleCodeIsRepeat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/RoleCodeIsRepeatResponse" message="tns:IService_RoleCodeIsRepeat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RolePurviewSet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/RolePurviewSet" message="tns:IService_RolePurviewSet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/RolePurviewSetResponse" message="tns:IService_RolePurviewSet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RoleGetPurviewList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/RoleGetPurviewList" message="tns:IService_RoleGetPurviewList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/RoleGetPurviewListResponse" message="tns:IService_RoleGetPurviewList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RoleMembers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/RoleMembers" message="tns:IService_RoleMembers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/RoleMembersResponse" message="tns:IService_RoleMembers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RoleMemberAdd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/RoleMemberAdd" message="tns:IService_RoleMemberAdd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/RoleMemberAddResponse" message="tns:IService_RoleMemberAdd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RoleMemberDelete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/RoleMemberDelete" message="tns:IService_RoleMemberDelete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/RoleMemberDeleteResponse" message="tns:IService_RoleMemberDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCacheKeyList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetCacheKeyList" message="tns:IService_GetCacheKeyList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetCacheKeyListResponse" message="tns:IService_GetCacheKeyList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CacheClear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/CacheClear" message="tns:IService_CacheClear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/CacheClearResponse" message="tns:IService_CacheClear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SysLogGetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SysLogGetList" message="tns:IService_SysLogGetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SysLogGetListResponse" message="tns:IService_SysLogGetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SysLogClear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SysLogClear" message="tns:IService_SysLogClear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SysLogClearResponse" message="tns:IService_SysLogClear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SysLoginLogGetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SysLoginLogGetList" message="tns:IService_SysLoginLogGetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SysLoginLogGetListResponse" message="tns:IService_SysLoginLogGetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SysLoginLogClear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SysLoginLogClear" message="tns:IService_SysLoginLogClear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SysLoginLogClearResponse" message="tns:IService_SysLoginLogClear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SystemExceptionGetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SystemExceptionGetList" message="tns:IService_SystemExceptionGetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SystemExceptionGetListResponse" message="tns:IService_SystemExceptionGetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SystemExceptionClear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SystemExceptionClear" message="tns:IService_SystemExceptionClear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SystemExceptionClearResponse" message="tns:IService_SystemExceptionClear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SystemGetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SystemGetList" message="tns:IService_SystemGetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SystemGetListResponse" message="tns:IService_SystemGetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SystemGetModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SystemGetModel" message="tns:IService_SystemGetModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SystemGetModelResponse" message="tns:IService_SystemGetModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SystemAdd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SystemAdd" message="tns:IService_SystemAdd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SystemAddResponse" message="tns:IService_SystemAdd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SystemEdit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SystemEdit" message="tns:IService_SystemEdit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SystemEditResponse" message="tns:IService_SystemEdit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SystemDelete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SystemDelete" message="tns:IService_SystemDelete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SystemDeleteResponse" message="tns:IService_SystemDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SystemNameIsRepeat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SystemNameIsRepeat" message="tns:IService_SystemNameIsRepeat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SystemNameIsRepeatResponse" message="tns:IService_SystemNameIsRepeat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SystemCodeIsRepeat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SystemCodeIsRepeat" message="tns:IService_SystemCodeIsRepeat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SystemCodeIsRepeatResponse" message="tns:IService_SystemCodeIsRepeat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserGetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UserGetList" message="tns:IService_UserGetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UserGetListResponse" message="tns:IService_UserGetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserGetModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UserGetModel" message="tns:IService_UserGetModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UserGetModelResponse" message="tns:IService_UserGetModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserAdd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UserAdd" message="tns:IService_UserAdd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UserAddResponse" message="tns:IService_UserAdd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserEdit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UserEdit" message="tns:IService_UserEdit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UserEditResponse" message="tns:IService_UserEdit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserAccountIsRepeat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UserAccountIsRepeat" message="tns:IService_UserAccountIsRepeat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UserAccountIsRepeatResponse" message="tns:IService_UserAccountIsRepeat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserCodeIsRepeat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UserCodeIsRepeat" message="tns:IService_UserCodeIsRepeat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UserCodeIsRepeatResponse" message="tns:IService_UserCodeIsRepeat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserPasswordReset">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UserPasswordReset" message="tns:IService_UserPasswordReset_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UserPasswordResetResponse" message="tns:IService_UserPasswordReset_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserGetPurviewList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UserGetPurviewList" message="tns:IService_UserGetPurviewList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UserGetPurviewListResponse" message="tns:IService_UserGetPurviewList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserPurviewSet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UserPurviewSet" message="tns:IService_UserPurviewSet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UserPurviewSetResponse" message="tns:IService_UserPurviewSet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserPurviewReset">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UserPurviewReset" message="tns:IService_UserPurviewReset_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UserPurviewResetResponse" message="tns:IService_UserPurviewReset_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleSet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UserRoleSet" message="tns:IService_UserRoleSet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UserRoleSetResponse" message="tns:IService_UserRoleSet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleGetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UserRoleGetList" message="tns:IService_UserRoleGetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UserRoleGetListResponse" message="tns:IService_UserRoleGetList_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IService" type="tns:IService">
+    <wsp:PolicyReference URI="#WSHttpBinding_IService_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/IService/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogOut">
+      <soap12:operation soapAction="http://tempuri.org/IService/LogOut" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginChangePassword">
+      <soap12:operation soapAction="http://tempuri.org/IService/LoginChangePassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogGetUserMenuList">
+      <soap12:operation soapAction="http://tempuri.org/IService/LogGetUserMenuList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataDictGetList">
+      <soap12:operation soapAction="http://tempuri.org/IService/DataDictGetList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataDictGetModel">
+      <soap12:operation soapAction="http://tempuri.org/IService/DataDictGetModel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataDictAdd">
+      <soap12:operation soapAction="http://tempuri.org/IService/DataDictAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataDictEdit">
+      <soap12:operation soapAction="http://tempuri.org/IService/DataDictEdit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataDictDelete">
+      <soap12:operation soapAction="http://tempuri.org/IService/DataDictDelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataDictNameIsRepeat">
+      <soap12:operation soapAction="http://tempuri.org/IService/DataDictNameIsRepeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataDictCodeIsRepeat">
+      <soap12:operation soapAction="http://tempuri.org/IService/DataDictCodeIsRepeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmployeeGetList">
+      <soap12:operation soapAction="http://tempuri.org/IService/EmployeeGetList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmployeeGetModel">
+      <soap12:operation soapAction="http://tempuri.org/IService/EmployeeGetModel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmployeeAdd">
+      <soap12:operation soapAction="http://tempuri.org/IService/EmployeeAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmployeeEdit">
+      <soap12:operation soapAction="http://tempuri.org/IService/EmployeeEdit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmployeeCodeIsRepeat">
+      <soap12:operation soapAction="http://tempuri.org/IService/EmployeeCodeIsRepeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IPBlackGetList">
+      <soap12:operation soapAction="http://tempuri.org/IService/IPBlackGetList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IPBlackGetModel">
+      <soap12:operation soapAction="http://tempuri.org/IService/IPBlackGetModel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IPBlackAdd">
+      <soap12:operation soapAction="http://tempuri.org/IService/IPBlackAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IPBlackEdit">
+      <soap12:operation soapAction="http://tempuri.org/IService/IPBlackEdit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IPBlackDelete">
+      <soap12:operation soapAction="http://tempuri.org/IService/IPBlackDelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MenuGetList">
+      <soap12:operation soapAction="http://tempuri.org/IService/MenuGetList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MenuGetModel">
+      <soap12:operation soapAction="http://tempuri.org/IService/MenuGetModel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MenuAdd">
+      <soap12:operation soapAction="http://tempuri.org/IService/MenuAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MenuEdit">
+      <soap12:operation soapAction="http://tempuri.org/IService/MenuEdit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MenuDelete">
+      <soap12:operation soapAction="http://tempuri.org/IService/MenuDelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MenuNameIsRepeat">
+      <soap12:operation soapAction="http://tempuri.org/IService/MenuNameIsRepeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MenuCodeIsRepeat">
+      <soap12:operation soapAction="http://tempuri.org/IService/MenuCodeIsRepeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrganGetList">
+      <soap12:operation soapAction="http://tempuri.org/IService/OrganGetList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrganGetModel">
+      <soap12:operation soapAction="http://tempuri.org/IService/OrganGetModel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrganAdd">
+      <soap12:operation soapAction="http://tempuri.org/IService/OrganAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrganEdit">
+      <soap12:operation soapAction="http://tempuri.org/IService/OrganEdit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrganDelete">
+      <soap12:operation soapAction="http://tempuri.org/IService/OrganDelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrganNameIsRepeat">
+      <soap12:operation soapAction="http://tempuri.org/IService/OrganNameIsRepeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrganCodeIsRepeat">
+      <soap12:operation soapAction="http://tempuri.org/IService/OrganCodeIsRepeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PubGetSystemList">
+      <soap12:operation soapAction="http://tempuri.org/IService/PubGetSystemList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PubGetRoleList">
+      <soap12:operation soapAction="http://tempuri.org/IService/PubGetRoleList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PubGetAllPurview">
+      <soap12:operation soapAction="http://tempuri.org/IService/PubGetAllPurview" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PubGetUserPurviewList">
+      <soap12:operation soapAction="http://tempuri.org/IService/PubGetUserPurviewList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PubGetUserByDeptId">
+      <soap12:operation soapAction="http://tempuri.org/IService/PubGetUserByDeptId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PurviewGetModuleList">
+      <soap12:operation soapAction="http://tempuri.org/IService/PurviewGetModuleList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PurviewGetFunctionList">
+      <soap12:operation soapAction="http://tempuri.org/IService/PurviewGetFunctionList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PurviewGetActionList">
+      <soap12:operation soapAction="http://tempuri.org/IService/PurviewGetActionList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PurviewGetListByParentId">
+      <soap12:operation soapAction="http://tempuri.org/IService/PurviewGetListByParentId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PurviewGetModel">
+      <soap12:operation soapAction="http://tempuri.org/IService/PurviewGetModel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PurviewAdd">
+      <soap12:operation soapAction="http://tempuri.org/IService/PurviewAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PurviewEdit">
+      <soap12:operation soapAction="http://tempuri.org/IService/PurviewEdit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PurviewDelete">
+      <soap12:operation soapAction="http://tempuri.org/IService/PurviewDelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PurviewNameIsRepeat">
+      <soap12:operation soapAction="http://tempuri.org/IService/PurviewNameIsRepeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PurviewCodeIsRepeat">
+      <soap12:operation soapAction="http://tempuri.org/IService/PurviewCodeIsRepeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoleGetList">
+      <soap12:operation soapAction="http://tempuri.org/IService/RoleGetList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoleGetModel">
+      <soap12:operation soapAction="http://tempuri.org/IService/RoleGetModel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoleAdd">
+      <soap12:operation soapAction="http://tempuri.org/IService/RoleAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoleEdit">
+      <soap12:operation soapAction="http://tempuri.org/IService/RoleEdit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoleDelete">
+      <soap12:operation soapAction="http://tempuri.org/IService/RoleDelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoleNameIsRepeat">
+      <soap12:operation soapAction="http://tempuri.org/IService/RoleNameIsRepeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoleCodeIsRepeat">
+      <soap12:operation soapAction="http://tempuri.org/IService/RoleCodeIsRepeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RolePurviewSet">
+      <soap12:operation soapAction="http://tempuri.org/IService/RolePurviewSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoleGetPurviewList">
+      <soap12:operation soapAction="http://tempuri.org/IService/RoleGetPurviewList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoleMembers">
+      <soap12:operation soapAction="http://tempuri.org/IService/RoleMembers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoleMemberAdd">
+      <soap12:operation soapAction="http://tempuri.org/IService/RoleMemberAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoleMemberDelete">
+      <soap12:operation soapAction="http://tempuri.org/IService/RoleMemberDelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCacheKeyList">
+      <soap12:operation soapAction="http://tempuri.org/IService/GetCacheKeyList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CacheClear">
+      <soap12:operation soapAction="http://tempuri.org/IService/CacheClear" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SysLogGetList">
+      <soap12:operation soapAction="http://tempuri.org/IService/SysLogGetList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SysLogClear">
+      <soap12:operation soapAction="http://tempuri.org/IService/SysLogClear" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SysLoginLogGetList">
+      <soap12:operation soapAction="http://tempuri.org/IService/SysLoginLogGetList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SysLoginLogClear">
+      <soap12:operation soapAction="http://tempuri.org/IService/SysLoginLogClear" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemExceptionGetList">
+      <soap12:operation soapAction="http://tempuri.org/IService/SystemExceptionGetList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemExceptionClear">
+      <soap12:operation soapAction="http://tempuri.org/IService/SystemExceptionClear" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemGetList">
+      <soap12:operation soapAction="http://tempuri.org/IService/SystemGetList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemGetModel">
+      <soap12:operation soapAction="http://tempuri.org/IService/SystemGetModel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemAdd">
+      <soap12:operation soapAction="http://tempuri.org/IService/SystemAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemEdit">
+      <soap12:operation soapAction="http://tempuri.org/IService/SystemEdit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemDelete">
+      <soap12:operation soapAction="http://tempuri.org/IService/SystemDelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemNameIsRepeat">
+      <soap12:operation soapAction="http://tempuri.org/IService/SystemNameIsRepeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemCodeIsRepeat">
+      <soap12:operation soapAction="http://tempuri.org/IService/SystemCodeIsRepeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserGetList">
+      <soap12:operation soapAction="http://tempuri.org/IService/UserGetList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserGetModel">
+      <soap12:operation soapAction="http://tempuri.org/IService/UserGetModel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserAdd">
+      <soap12:operation soapAction="http://tempuri.org/IService/UserAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserEdit">
+      <soap12:operation soapAction="http://tempuri.org/IService/UserEdit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserAccountIsRepeat">
+      <soap12:operation soapAction="http://tempuri.org/IService/UserAccountIsRepeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserCodeIsRepeat">
+      <soap12:operation soapAction="http://tempuri.org/IService/UserCodeIsRepeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserPasswordReset">
+      <soap12:operation soapAction="http://tempuri.org/IService/UserPasswordReset" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserGetPurviewList">
+      <soap12:operation soapAction="http://tempuri.org/IService/UserGetPurviewList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserPurviewSet">
+      <soap12:operation soapAction="http://tempuri.org/IService/UserPurviewSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserPurviewReset">
+      <soap12:operation soapAction="http://tempuri.org/IService/UserPurviewReset" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleSet">
+      <soap12:operation soapAction="http://tempuri.org/IService/UserRoleSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleGetList">
+      <soap12:operation soapAction="http://tempuri.org/IService/UserRoleGetList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="WSHttpBinding_IService" binding="tns:WSHttpBinding_IService">
+      <soap12:address location="http://localhost:8081/Service.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:8081/Service.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Dns>localhost</Dns>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
