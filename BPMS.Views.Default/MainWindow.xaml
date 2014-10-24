@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:BPMS.Views.Default"
+    xmlns:src="clr-namespace:BPMS.Model;assembly=BPMS.Model"
     xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
     xmlns:dxd="http://schemas.devexpress.com/winfx/2008/xaml/docking"
     xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
@@ -12,35 +13,179 @@
     Style="{StaticResource ResourceKey=WindowStyle}"
     >
     <Window.Resources>
+        <!--顶部按钮数据模版-->
+        <DataTemplate DataType="{x:Type src:BindButton}" x:Key="btnTitleContentTemplate">
+            <Grid>
+                <Image Width="32" Height="32" Source="{Binding ImageSource}" VerticalAlignment="Top" Margin="0,10" />
+                <TextBlock Text="{Binding Content}" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,15" />
+            </Grid>
+        </DataTemplate>
 
+        <!--顶部按钮外观模版 未选中-->
+        <ControlTemplate TargetType="{x:Type Button}" x:Key="btnTitleUnSelectedControlTemplate">
+            <Grid>
+                <Rectangle RadiusX="9" RadiusY="9" Stroke="#0F4E7F" StrokeThickness="0"  Name="recBorder">
+                    <Rectangle.Fill>
+                        <SolidColorBrush x:Name="outline" Color="#1E71B1" />
+                        <!--Color="#105488"-->
+                    </Rectangle.Fill>
+                </Rectangle>
+                <ContentPresenter />
+                <!--<Image Width="32" Height="32" Source="Images/32/n1.png" VerticalAlignment="Top" Margin="0,10" />
+                            <TextBlock Text="首页" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,15" />-->
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Duration="0:0:0.3"
+                                 Storyboard.TargetProperty="(SolidColorBrush.Color)" Storyboard.TargetName="outline" 
+                                                From="#1E71B1" To="#105488" />
+                                <!--<DoubleAnimation Duration="0:0:0.3" AutoReverse="True" Storyboard.TargetProperty="(Rectangle.Fill)"
+                                 Storyboard.TargetName="outline" By="#1E71B1" />-->
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Duration="0:0:0.3"
+                                 Storyboard.TargetProperty="(SolidColorBrush.Color)" Storyboard.TargetName="outline" 
+                                                From="#105488" To="#1E71B1" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <!--顶部按钮外观模版 选中-->
+        <ControlTemplate TargetType="{x:Type Button}" x:Key="btnTitleSelectedControlTemplate">
+            <Grid>
+                <Rectangle RadiusX="9" RadiusY="9" Stroke="#0F4E7F" StrokeThickness="0"  Name="recBorder">
+                    <Rectangle.Fill>
+                        <SolidColorBrush x:Name="outline" Color="#105488" />
+                    </Rectangle.Fill>
+                </Rectangle>
+                <ContentPresenter />
+            </Grid>
+        </ControlTemplate>
+
+        <!--分隔符-->
+        <Style x:Key="separatorStyle" TargetType="{x:Type Separator}">
+            <Setter Property="RenderTransformOrigin" Value="0,0" />
+            <Setter Property="Width" Value="23" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="VerticalAlignment" Value="Stretch" />
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform X="30" Y="0"/>
+                    </TransformGroup>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+        <!--首页选项卡样式-->
+        <DataTemplate DataType="{x:Type src:MenuInfo}" x:Key="dpCaptionTemplate">
+            <WrapPanel Height="22">
+                <Image Source="{Binding IconUrl}" Width="16" Height="16" Margin="5, 0" />
+                <TextBlock Text="{Binding Name}" FontSize="14" />
+            </WrapPanel>
+        </DataTemplate>
+        
+        <Style x:Key="homeDocumentPanel" TargetType="{x:Type dxd:DocumentPanel}">
+            <Setter Property="ItemHeight" Value="600*" />
+            <Setter Property="AllowDock" Value="False" />
+            <Setter Property="AllowClose" Value="False" />
+            <Setter Property="AllowMaximize" Value="False" />
+            <Setter Property="AllowDrag" Value="False" />
+            <Setter Property="AllowFloat" Value="False" />
+            <Setter Property="ShowRestoreButton" Value="False" />
+            <Setter Property="CaptionTemplate" Value="{StaticResource dpCaptionTemplate}" />
+        </Style>
+        <!--ListBox通用样式-->
+        <Style TargetType="{x:Type dxe:ListBoxEdit}">
+            <Setter Property="ShowBorder" Value="False" />
+            <Setter Property="BorderThickness" Value="0" />
+        </Style> 
+        
     </Window.Resources>
+    <DockPanel >
+        <!--状态栏-->
+        <Grid DockPanel.Dock="Bottom" Height="23" Background="#F7F7F7">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60" />
+                <ColumnDefinition Width="120*" />
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="130" />
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="版本 V1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <Separator  Grid.Column="0" Style="{StaticResource separatorStyle}" />
+            <TextBlock Text="CopyRight © 2014-2050 By Robin" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <Separator  Grid.Column="1" Style="{StaticResource separatorStyle}" />
+            <WrapPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="操作员 "  HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <TextBlock x:Name="txtLoginUser" Text="管理员"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </WrapPanel>
+            <Separator  Grid.Column="2" Style="{StaticResource separatorStyle}" />
+            <WrapPanel Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="所在部门 "  HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <TextBlock x:Name="txtDept" Text="IT信息部"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </WrapPanel>
+            <Separator  Grid.Column="3" Style="{StaticResource separatorStyle}" />
 
-    <dxd:DockLayoutManager x:Name="dockLayoutManager">
-        <dxd:LayoutGroup>
-            <dxd:LayoutGroup Orientation="Vertical"  ItemWidth="3*">
-                <dxd:DocumentGroup ItemHeight="3*">
-                    <dxd:DocumentPanel Caption="Document1" ItemHeight="3*">
-                        <TextBox BorderThickness="0" />
-                    </dxd:DocumentPanel>
-                </dxd:DocumentGroup>
-                <dxd:LayoutPanel Caption="DetailView" ItemHeight="2*">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="0" />
-                        </Grid.ColumnDefinitions>
-                        <TextBox BorderThickness="0" />
-                    </Grid>
-                </dxd:LayoutPanel>
+            <WrapPanel Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="在线人数 "  HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <TextBlock x:Name="txtOnLineTotal" Text="1"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </WrapPanel>
+        </Grid>
+        <!--顶部-->
+        <Grid DockPanel.Dock="Top" Height="75" VerticalAlignment="Top" Background="#1E71B1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100*" />
+                <ColumnDefinition Width="75" />
+                <ColumnDefinition Width="80" />
+                <ColumnDefinition Width="76" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="通用权限管理系统" Grid.Column="0" FontSize="36" FontWeight="Bold" HorizontalAlignment="Left" Margin=" 20, 0, 0, 0" VerticalAlignment="Center" Foreground="White" />
+            <Button x:Name="btnHome" Grid.Column="1" Template="{StaticResource btnTitleSelectedControlTemplate}" ContentTemplate="{StaticResource btnTitleContentTemplate}" />
+            <Button x:Name="btnSettings" Grid.Column="2" Template="{StaticResource btnTitleUnSelectedControlTemplate}" ContentTemplate="{StaticResource btnTitleContentTemplate}" Margin="3, 0" />
+            <Button x:Name="btnExit" Grid.Column="3" Template="{StaticResource btnTitleUnSelectedControlTemplate}" ContentTemplate="{StaticResource btnTitleContentTemplate}" Margin="0, 0, 5, 0" />
+        </Grid>
+        <!--内容选项卡-->
+        <dxd:DockLayoutManager x:Name="dockLayoutManager" DockPanel.Dock="Bottom" >
+            <dxd:LayoutGroup>
+                <dxd:LayoutGroup Orientation="Vertical" ItemWidth="3*" >
+                    <dxd:DocumentGroup ItemHeight="3*" ShowDropDownButton="False">
+                        <dxd:DocumentPanel x:Name="dpHome" Style="{StaticResource homeDocumentPanel}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="180" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="29"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <local:TitleControl Grid.Row="0" Grid.Column="0" Title="主功能菜单导航"  BorderThickness="0,0,0,1" />
+                                <local:TitleControl Grid.Row="0" Grid.Column="1" Title="子功能项-"  BorderThickness="1,0,0,1" />
+                                <!--<TextBlock Text="主功能菜单导航" Grid.Row="0" Grid.Column="0" Style="{StaticResource titleStyle}" VerticalAlignment="Center" />-->
+                                
+                                <dxe:ListBoxEdit Grid.Column="0" Grid.Row="1" x:Name="lstboxLeftMenu" />
+                                <dxe:ListBoxEdit Grid.Column="1" Grid.Row="1" x:Name="lstboxRightMenu" />
+                            </Grid>
+                        </dxd:DocumentPanel>
+                    </dxd:DocumentGroup>
+                </dxd:LayoutGroup>
+                <dxd:TabbedGroup ItemWidth="*"/>
             </dxd:LayoutGroup>
-            <dxd:TabbedGroup ItemWidth="*"/>
-        </dxd:LayoutGroup>
-        <dxd:DockLayoutManager.AutoHideGroups>
-            <dxd:AutoHideGroup >
-                <dxd:LayoutPanel Caption="Navigation" ItemWidth="200" Padding="1">
-                    <TextBox BorderThickness="0" />
-                </dxd:LayoutPanel>
-            </dxd:AutoHideGroup>
-        </dxd:DockLayoutManager.AutoHideGroups>
-    </dxd:DockLayoutManager>
+        </dxd:DockLayoutManager>
+    </DockPanel>
 </dx:DXWindow>

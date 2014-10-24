@@ -5,3 +5,5 @@ DevExpress.Xpf.Editors.TextEdit, DevExpress.Xpf.Core.v13.2, Version=13.2.5.0, Cu
 DevExpress.Xpf.Editors.PasswordBoxEdit, DevExpress.Xpf.Core.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
 DevExpress.Xpf.Editors.ButtonEdit, DevExpress.Xpf.Core.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
 DevExpress.Xpf.Editors.ComboBoxEdit, DevExpress.Xpf.Core.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+DevExpress.Xpf.Core.DXTabControl, DevExpress.Xpf.Core.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+DevExpress.Xpf.Editors.ListBoxEdit, DevExpress.Xpf.Core.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a

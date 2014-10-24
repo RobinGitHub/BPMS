@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BindButton.cs" />
     <Compile Include="ClientCredentials.cs" />
     <Compile Include="DataDictionary.cs">
       <DependentUpon>Model.tt</DependentUpon>

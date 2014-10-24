@@ -112,6 +112,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\TitleControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\MaskControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -123,6 +127,9 @@
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TitleControl.xaml.cs">
+      <DependentUpon>TitleControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\MaskControl.xaml.cs">
       <DependentUpon>MaskControl.xaml</DependentUpon>
@@ -153,7 +160,6 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Images\" />
     <Folder Include="Pages\" />
   </ItemGroup>
   <ItemGroup>
@@ -165,6 +171,29 @@
       <Project>{872e9c3b-b84f-4092-909b-6863abfa3bc9}</Project>
       <Name>BPMS.ViewModels</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\32\4963_home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\16\arrow_out.gif" />
+    <Resource Include="Images\16\arrow_refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\32\20131012030416621.png" />
+    <Resource Include="Images\32\424.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\32\5026_settings.png" />
+    <Resource Include="Images\32\eye.png" />
+    <Resource Include="Images\32\loading.gif" />
+    <Resource Include="Images\32\n1.png" />
+    <Resource Include="Images\32\n2.png" />
+    <Resource Include="Images\32\n3.png" />
+    <Resource Include="Images\32\n4.png" />
+    <Resource Include="Images\32\people.png" />
+    <Resource Include="Images\32\settings.png" />
+    <Resource Include="Images\32\sitemap.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

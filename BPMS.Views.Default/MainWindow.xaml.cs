@@ -13,6 +13,7 @@ using System.Windows.Shapes;
 using DevExpress.Xpf.Core;
 using DevExpress.Xpf.Layout.Core;
 using DevExpress.Xpf.Docking;
+using BPMS.Model;
 
 
 namespace BPMS.Views.Default
@@ -22,7 +23,16 @@ namespace BPMS.Views.Default
         public MainWindow()
         {
             InitializeComponent();
+            this.Loaded += MainWindow_Loaded;
+        }
 
+        void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            btnHome.Content = new BindButton() { Content = "首页", ImageSource = "Images/32/n1.png" };
+            btnSettings.Content = new BindButton() { Content = "设置", ImageSource = "Images/32/n3.png" };
+            btnExit.Content = new BindButton() { Content = "退出", ImageSource = "Images/32/n4.png" };
+            //首页
+            dpHome.Caption = new MenuInfo() { Name = "首页", IconUrl = "Images/32/4963_home.png" };
         }
 
     }
