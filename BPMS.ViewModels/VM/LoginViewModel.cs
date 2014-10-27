@@ -3,18 +3,15 @@ using BPMS.Foundatoin;
 using BPMS.Model;
 using BPMS.References;
 using System;
-using System.Linq;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Threading;
+using System.Linq;
 using System.Windows.Input;
-using System.Data;
 
 namespace BPMS.ViewModels
 {
     public class LoginViewModel : ObservableObject
     {
-        #region 命令
+        #region 属性
         /// <summary>
         /// 登录命令
         /// </summary>
@@ -34,11 +31,8 @@ namespace BPMS.ViewModels
         /// <summary>
         /// 当前选中的角色
         /// </summary>
-        DropdownItem _selectedRole = DropdownItem.GetPlease;
+        DropdownItem _selectedRole = DropdownItem.GetPlease; 
 
-        #endregion
-
-        #region 属性
         public string Account { get { return _account; } set { _account = value; } }
         public string Password { get { return _password; } set { _password = value; } }
         public string IP { get; set; }
@@ -239,8 +233,6 @@ namespace BPMS.ViewModels
             }
         }
         #endregion
-
-        
 
         #region 选择登录角色
         void ExecSelectedIndexChanged(object parameter)

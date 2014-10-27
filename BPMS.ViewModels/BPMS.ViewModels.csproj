@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Delegates.cs" />
     <Compile Include="VM\LoginViewModel.cs" />
+    <Compile Include="VM\MainWindowViewModel.cs" />
     <Compile Include="VM\UserInfoViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

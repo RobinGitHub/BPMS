@@ -14,15 +14,22 @@ using DevExpress.Xpf.Core;
 using DevExpress.Xpf.Layout.Core;
 using DevExpress.Xpf.Docking;
 using BPMS.Model;
+using BPMS.ViewModels;
 
 
 namespace BPMS.Views.Default
 {
     public partial class MainWindow : DXWindow
     {
+        MainWindowViewModel vm = null;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            vm = new MainWindowViewModel();
+            this.DataContext = vm;
+            vm.GetResult += vm_GetResult;
             this.Loaded += MainWindow_Loaded;
         }
 
@@ -35,6 +42,10 @@ namespace BPMS.Views.Default
             dpHome.Caption = new MenuInfo() { Name = "首页", IconUrl = "Images/32/4963_home.png" };
         }
 
+        void vm_GetResult(Model.Result rlt)
+        {
+
+        }
     }
 
 
