@@ -1,0 +1,153 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:BPMS.Views.Default"
+    xmlns:src="clr-namespace:BPMS.Model;assembly=BPMS.Model"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxd="http://schemas.devexpress.com/winfx/2008/xaml/docking"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        >
+
+    <!--ListBox通用样式-->
+    <Style x:Key="menuLeft" TargetType="{x:Type ListBox}" >
+        <Setter Property="BorderThickness" Value="0,0,1,0" />
+        <Setter Property="BorderBrush" Value="#CCCCCC" />
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50" />
+                            <ColumnDefinition Width="100*" />
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Width="32" Height="32" Source="{Binding IconUrl}" VerticalAlignment="Center" HorizontalAlignment="Right" />
+                        <TextBlock Grid.Column="1" Margin="15,0, 0, 0" Text="{Binding Name}" VerticalAlignment="Center" />
+                    </Grid>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="menuRight" TargetType="{x:Type ListBox}" >
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBox}">
+                    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                        <WrapPanel IsItemsHost="True" Margin="50,50,50,10" />
+                    </ScrollViewer>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Grid Width="80" Margin="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="32" />
+                            <RowDefinition Height="21" />
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Width="32" Height="32" Source="{Binding IconUrl}" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        <TextBlock Grid.Row="1" Margin="0, 3" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Grid>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <!--顶部按钮数据模版-->
+    <DataTemplate DataType="{x:Type src:BindButton}" x:Key="btnTitleContentTemplate">
+        <Grid>
+            <Image Width="32" Height="32" Source="{Binding ImageSource}" VerticalAlignment="Top" Margin="0,10" />
+            <TextBlock Text="{Binding Content}" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,15" />
+        </Grid>
+    </DataTemplate>
+
+    <!--顶部按钮外观模版 未选中-->
+    <ControlTemplate TargetType="{x:Type Button}" x:Key="btnTitleUnSelectedControlTemplate">
+        <Grid>
+            <Rectangle RadiusX="9" RadiusY="9" Stroke="#0F4E7F" StrokeThickness="0"  Name="recBorder">
+                <Rectangle.Fill>
+                    <SolidColorBrush x:Name="outline" Color="#1E71B1" />
+                    <!--Color="#105488"-->
+                </Rectangle.Fill>
+            </Rectangle>
+            <ContentPresenter />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Duration="0:0:0.3"
+                                 Storyboard.TargetProperty="(SolidColorBrush.Color)" Storyboard.TargetName="outline" 
+                                                From="#1E71B1" To="#105488" />
+                            <!--<DoubleAnimation Duration="0:0:0.3" AutoReverse="True" Storyboard.TargetProperty="(Rectangle.Fill)"
+                                 Storyboard.TargetName="outline" By="#1E71B1" />-->
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Duration="0:0:0.3"
+                                 Storyboard.TargetProperty="(SolidColorBrush.Color)" Storyboard.TargetName="outline" 
+                                                From="#105488" To="#1E71B1" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.ExitActions>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <!--顶部按钮外观模版 选中-->
+    <ControlTemplate TargetType="{x:Type Button}" x:Key="btnTitleSelectedControlTemplate">
+        <Grid>
+            <Rectangle RadiusX="9" RadiusY="9" Stroke="#0F4E7F" StrokeThickness="0"  Name="recBorder">
+                <Rectangle.Fill>
+                    <SolidColorBrush x:Name="outline" Color="#105488" />
+                </Rectangle.Fill>
+            </Rectangle>
+            <ContentPresenter />
+        </Grid>
+    </ControlTemplate>
+
+    <!--分隔符-->
+    <Style x:Key="separatorStyle" TargetType="{x:Type Separator}">
+        <Setter Property="RenderTransformOrigin" Value="0,0" />
+        <Setter Property="Width" Value="23" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="RenderTransform">
+            <Setter.Value>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform X="30" Y="0"/>
+                </TransformGroup>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <!--首页选项卡样式-->
+    <DataTemplate DataType="{x:Type src:MenuInfo}" x:Key="dpCaptionTemplate">
+        <WrapPanel Height="22">
+            <Image Source="{Binding IconUrl}" Width="16" Height="16" Margin="5, 0" />
+            <TextBlock Text="{Binding Name}" FontSize="14" />
+        </WrapPanel>
+    </DataTemplate>
+
+    <Style x:Key="homeDocumentPanel" TargetType="{x:Type dxd:DocumentPanel}">
+        <Setter Property="ItemHeight" Value="600*" />
+        <Setter Property="AllowDock" Value="False" />
+        <Setter Property="AllowClose" Value="False" />
+        <Setter Property="AllowMaximize" Value="False" />
+        <Setter Property="AllowDrag" Value="False" />
+        <Setter Property="AllowFloat" Value="False" />
+        <Setter Property="ShowRestoreButton" Value="False" />
+        <Setter Property="CaptionTemplate" Value="{StaticResource dpCaptionTemplate}" />
+    </Style>
+</ResourceDictionary>

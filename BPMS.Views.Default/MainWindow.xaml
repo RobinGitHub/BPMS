@@ -15,8 +15,9 @@
     >
     <Window.Resources>
         <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>                
-                <ResourceDictionary Source="Themes/ListBoxStyle.xaml" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/BPMS.Views.Default;component/Themes/Dictionary1.xaml" />
+                <ResourceDictionary Source="Themes/HomeStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
