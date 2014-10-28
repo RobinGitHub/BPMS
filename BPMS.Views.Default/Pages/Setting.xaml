@@ -3,14 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-            xmlns:local="clr-namespace:BPMS.Views.Default"
-            xmlns:src="clr-namespace:BPMS.Model;assembly=BPMS.Model"
-            xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
-            xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
-            xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" 
+             xmlns:local="clr-namespace:BPMS.Views.Default"
+             xmlns:vm="clr-namespace:BPMS.ViewModels;assembly=BPMS.ViewModels"
+             xmlns:src="clr-namespace:BPMS.Model;assembly=BPMS.Model"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" 
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="800"
              >
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/ListBoxStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="180" />

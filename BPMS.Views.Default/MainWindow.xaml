@@ -16,8 +16,8 @@
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/BPMS.Views.Default;component/Themes/Dictionary1.xaml" />
                 <ResourceDictionary Source="Themes/HomeStyle.xaml" />
+                <ResourceDictionary Source="Themes/ListBoxStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
@@ -69,7 +69,7 @@
         <dxd:DockLayoutManager x:Name="dockLayoutManager" DockPanel.Dock="Bottom" >
             <dxd:LayoutGroup>
                 <dxd:LayoutGroup Orientation="Vertical" ItemWidth="3*" >
-                    <dxd:DocumentGroup ItemHeight="3*" ShowDropDownButton="False">
+                    <dxd:DocumentGroup x:Name="docGroup" ItemHeight="3*" ShowDropDownButton="False">
                         <dxd:DocumentPanel x:Name="dpHome" Style="{StaticResource homeDocumentPanel}">
                             <Grid>
                                 <Grid.ColumnDefinitions>

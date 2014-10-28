@@ -8,54 +8,6 @@
     xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         >
 
-    <!--ListBox通用样式-->
-    <Style x:Key="menuLeft" TargetType="{x:Type ListBox}" >
-        <Setter Property="BorderThickness" Value="0,0,1,0" />
-        <Setter Property="BorderBrush" Value="#CCCCCC" />
-        <Setter Property="ItemTemplate">
-            <Setter.Value>
-                <DataTemplate>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="50" />
-                            <ColumnDefinition Width="100*" />
-                        </Grid.ColumnDefinitions>
-                        <Image Grid.Column="0" Width="32" Height="32" Source="{Binding IconUrl}" VerticalAlignment="Center" HorizontalAlignment="Right" />
-                        <TextBlock Grid.Column="1" Margin="15,0, 0, 0" Text="{Binding Name}" VerticalAlignment="Center" />
-                    </Grid>
-                </DataTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-
-
-    <Style x:Key="menuRight" TargetType="{x:Type ListBox}" >
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type ListBox}">
-                    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-                        <WrapPanel IsItemsHost="True" Margin="50,50,50,10" />
-                    </ScrollViewer>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-        <Setter Property="ItemTemplate">
-            <Setter.Value>
-                <DataTemplate>
-                    <Grid Width="80" Margin="10">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="32" />
-                            <RowDefinition Height="21" />
-                        </Grid.RowDefinitions>
-                        <Image Grid.Row="0" Width="32" Height="32" Source="{Binding IconUrl}" VerticalAlignment="Center" HorizontalAlignment="Center" />
-                        <TextBlock Grid.Row="1" Margin="0, 3" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                    </Grid>
-                </DataTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-
-
     <!--顶部按钮数据模版-->
     <DataTemplate DataType="{x:Type src:BindButton}" x:Key="btnTitleContentTemplate">
         <Grid>
