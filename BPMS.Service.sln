@@ -22,7 +22,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL", "SQL", "{37D7731C-AAD1-4200-A1E8-FBFFEEC77E70}"
 	ProjectSection(SolutionItems) = preProject
 		文档管理\SQL\BPMSDesign.pdm = 文档管理\SQL\BPMSDesign.pdm
-		文档管理\SQL\系统权限设计.docx = 文档管理\SQL\系统权限设计.docx
+		文档管理\SQL\GetNewID.sql = 文档管理\SQL\GetNewID.sql
+		文档管理\SQL\Init.sql = 文档管理\SQL\Init.sql
+		文档管理\SQL\SP_GetUserMenu.sql = 文档管理\SQL\SP_GetUserMenu.sql
+		文档管理\SQL\SP_GetUserPurview.sql = 文档管理\SQL\SP_GetUserPurview.sql
+		文档管理\SQL\SQL.sql = 文档管理\SQL\SQL.sql
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "原型", "原型", "{9CDA5802-C9B6-4964-877F-70B96BCA5776}"
