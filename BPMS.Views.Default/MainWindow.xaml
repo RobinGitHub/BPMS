@@ -8,7 +8,7 @@
     xmlns:dxd="http://schemas.devexpress.com/winfx/2008/xaml/docking"
     xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
     xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
-    Title="DXApplication" Height="600" Width="800"
+    Title="通用权限管理系统" Height="600" Width="800"
     SnapsToDevicePixels="True" UseLayoutRounding="True"
     WindowStartupLocation="CenterScreen"
     Style="{StaticResource ResourceKey=WindowStyle}"

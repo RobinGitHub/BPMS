@@ -85,6 +85,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="UserControls\ButtonTools.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -92,6 +96,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserControls\ButtonTools.xaml.cs">
+      <DependentUpon>ButtonTools.xaml</DependentUpon>
     </Compile>
     <Compile Include="Common\Consts.cs" />
     <Compile Include="Common\MessageDxUtil.cs" />
@@ -109,6 +116,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\Setting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Setting_ChangePwd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Setting_Profile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -142,6 +157,12 @@
     </Compile>
     <Compile Include="Pages\Setting.xaml.cs">
       <DependentUpon>Setting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Setting_ChangePwd.xaml.cs">
+      <DependentUpon>Setting_ChangePwd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Setting_Profile.xaml.cs">
+      <DependentUpon>Setting_Profile.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\TitleControl.xaml.cs">
       <DependentUpon>TitleControl.xaml</DependentUpon>

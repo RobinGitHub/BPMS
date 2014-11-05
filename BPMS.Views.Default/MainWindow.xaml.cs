@@ -31,8 +31,6 @@ namespace BPMS.Views.Default
             btnExit.Click += btnExit_Click;
         }
 
-
-
         void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             btnHome.Content = new BindButton() { Content = "首页", ImageSource = "Images/32/n1.png" };

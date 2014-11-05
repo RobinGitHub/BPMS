@@ -32,13 +32,9 @@
             </Grid.RowDefinitions>
             <local:TitleControl Grid.Row="0" Grid.Column="0" Title="个人信息"  BorderThickness="0,0,1,1" />
             <!--左侧菜单-->
-            <ListBox Grid.Column="0" Grid.Row="1" x:Name="lstboxLeftMenu" Style="{StaticResource menuLeft}" ItemsSource="{Binding MenuList}" SelectedItem="{Binding SelectedMenu}" SelectedIndex="0" >
-                <i:Interaction.Triggers>
-                    <i:EventTrigger EventName="SelectionChanged">
-                        <i:InvokeCommandAction Command="{Binding SelectedIndexChangedCommand}" CommandParameter="{Binding SelectedMenu}" />
-                    </i:EventTrigger>
-                </i:Interaction.Triggers>
+            <ListBox Grid.Column="0" Grid.Row="1" x:Name="lstboxLeftMenu" Style="{StaticResource menuLeft}" ItemsSource="{Binding MenuList}" SelectedIndex="0" >
             </ListBox>
         </Grid>
+        <ContentControl x:Name="ccContent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" />
     </Grid>
 </UserControl>
