@@ -13,7 +13,7 @@ namespace BPMS.Services
         public string IPBlackGetList(string xmlCredentials)
         {
             ClientCredentials objCredentials = xmlCredentials.ToModel<ClientCredentials>();
-            if (CheckPurview(objCredentials, EModules.PurviewMng, EFunctions.IPBlackMng, EActions.Vie) != 1)
+            if (CheckPurview(objCredentials, EModules.SystemMng, EFunctions.IPBlackMng, EActions.Vie) != 1)
                 throw new Exception(String.Format("Service Method:{0} Access Error", base.GetActionName()));
             DataTable dtRlt = this.BLLProvider.IPBlacklistBLL.GetList(objCredentials.UserId, objCredentials.UserName);
             return ZipHelper.CompressDataTable(dtRlt);
@@ -22,7 +22,7 @@ namespace BPMS.Services
         public string IPBlackGetModel(string xmlCredentials, int id)
         {
             ClientCredentials objCredentials = xmlCredentials.ToModel<ClientCredentials>();
-            if (CheckPurview(objCredentials, EModules.PurviewMng, EFunctions.IPBlackMng, EActions.Vie) != 1)
+            if (CheckPurview(objCredentials, EModules.SystemMng, EFunctions.IPBlackMng, EActions.Vie) != 1)
                 throw new Exception(String.Format("Service Method:{0} Access Error", base.GetActionName()));
             return this.BLLProvider.IPBlacklistBLL.GetModel(id).ToXmlString();
         }
@@ -30,7 +30,7 @@ namespace BPMS.Services
         public int IPBlackAdd(string xmlCredentials, string xmlModel)
         {
             ClientCredentials objCredentials = xmlCredentials.ToModel<ClientCredentials>();
-            if (CheckPurview(objCredentials, EModules.PurviewMng, EFunctions.IPBlackMng, EActions.Add) != 1)
+            if (CheckPurview(objCredentials, EModules.SystemMng, EFunctions.IPBlackMng, EActions.Add) != 1)
                 throw new Exception(String.Format("Service Method:{0} Access Error", base.GetActionName()));
             var model = xmlModel.ToModel<IPBlacklist>();
             return this.BLLProvider.IPBlacklistBLL.Add(model);
@@ -39,7 +39,7 @@ namespace BPMS.Services
         public int IPBlackEdit(string xmlCredentials, string xmlModel)
         {
             ClientCredentials objCredentials = xmlCredentials.ToModel<ClientCredentials>();
-            if (CheckPurview(objCredentials, EModules.PurviewMng, EFunctions.IPBlackMng, EActions.Upd) != 1)
+            if (CheckPurview(objCredentials, EModules.SystemMng, EFunctions.IPBlackMng, EActions.Upd) != 1)
                 throw new Exception(String.Format("Service Method:{0} Access Error", base.GetActionName()));
             var model = xmlModel.ToModel<IPBlacklist>();
             return this.BLLProvider.IPBlacklistBLL.Edit(model);
@@ -48,7 +48,7 @@ namespace BPMS.Services
         public int IPBlackDelete(string xmlCredentials, int id)
         {
             ClientCredentials objCredentials = xmlCredentials.ToModel<ClientCredentials>();
-            if (CheckPurview(objCredentials, EModules.PurviewMng, EFunctions.IPBlackMng, EActions.Del) != 1)
+            if (CheckPurview(objCredentials, EModules.SystemMng, EFunctions.IPBlackMng, EActions.Del) != 1)
                 throw new Exception(String.Format("Service Method:{0} Access Error", base.GetActionName()));
             return this.BLLProvider.IPBlacklistBLL.Delete(objCredentials.UserId, objCredentials.UserName, id);
         }

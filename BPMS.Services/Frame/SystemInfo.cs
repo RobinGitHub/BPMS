@@ -9,7 +9,7 @@ namespace BPMS.Services
         public string SystemGetList(string xmlCredentials)
         {
             ClientCredentials objCredentials = xmlCredentials.ToModel<ClientCredentials>();
-            if (CheckPurview(objCredentials, EModules.PurviewMng, EFunctions.SystemMng, EActions.Vie) != 1)
+            if (CheckPurview(objCredentials, EModules.SystemMng, EFunctions.SystemMng, EActions.Vie) != 1)
                 throw new Exception(String.Format("Service Method:{0} Access Error", base.GetActionName()));
             DataTable dtRlt = this.BLLProvider.SystemInfoBLL.GetList(objCredentials.UserId, objCredentials.UserName);
             return ZipHelper.CompressDataTable(dtRlt);
@@ -18,7 +18,7 @@ namespace BPMS.Services
         public string SystemGetModel(string xmlCredentials, int id)
         {
             ClientCredentials objCredentials = xmlCredentials.ToModel<ClientCredentials>();
-            if (CheckPurview(objCredentials, EModules.PurviewMng, EFunctions.SystemMng, EActions.Vie) != 1)
+            if (CheckPurview(objCredentials, EModules.SystemMng, EFunctions.SystemMng, EActions.Vie) != 1)
                 throw new Exception(String.Format("Service Method:{0} Access Error", base.GetActionName()));
             return this.BLLProvider.SystemInfoBLL.GetModel(id).ToXmlString();
         }
@@ -26,7 +26,7 @@ namespace BPMS.Services
         public int SystemAdd(string xmlCredentials, string xmlModel)
         {
             ClientCredentials objCredentials = xmlCredentials.ToModel<ClientCredentials>();
-            if (CheckPurview(objCredentials, EModules.PurviewMng, EFunctions.SystemMng, EActions.Add) != 1)
+            if (CheckPurview(objCredentials, EModules.SystemMng, EFunctions.SystemMng, EActions.Add) != 1)
                 throw new Exception(String.Format("Service Method:{0} Access Error", base.GetActionName()));
             var model = xmlModel.ToModel<SystemInfo>();
             model.CreateUserId = objCredentials.UserId;
@@ -41,7 +41,7 @@ namespace BPMS.Services
         public int SystemEdit(string xmlCredentials, string xmlModel)
         {
             ClientCredentials objCredentials = xmlCredentials.ToModel<ClientCredentials>();
-            if (CheckPurview(objCredentials, EModules.PurviewMng, EFunctions.SystemMng, EActions.Upd) != 1)
+            if (CheckPurview(objCredentials, EModules.SystemMng, EFunctions.SystemMng, EActions.Upd) != 1)
                 throw new Exception(String.Format("Service Method:{0} Access Error", base.GetActionName()));
             var model = xmlModel.ToModel<SystemInfo>();
             model.ModifyDate = DateTime.Now;
@@ -53,7 +53,7 @@ namespace BPMS.Services
         public int SystemDelete(string xmlCredentials, int id)
         {
             ClientCredentials objCredentials = xmlCredentials.ToModel<ClientCredentials>();
-            if (CheckPurview(objCredentials, EModules.PurviewMng, EFunctions.SystemMng, EActions.Del) != 1)
+            if (CheckPurview(objCredentials, EModules.SystemMng, EFunctions.SystemMng, EActions.Del) != 1)
                 throw new Exception(String.Format("Service Method:{0} Access Error", base.GetActionName()));
             return this.BLLProvider.SystemInfoBLL.Delete(objCredentials.UserId, objCredentials.UserName, id);
         }
@@ -61,7 +61,7 @@ namespace BPMS.Services
         public bool SystemNameIsRepeat(string xmlCredentials, string name, int id)
         {
             ClientCredentials objCredentials = xmlCredentials.ToModel<ClientCredentials>();
-            if (CheckPurview(objCredentials, EModules.PurviewMng, EFunctions.SystemMng, EActions.Vie) != 1)
+            if (CheckPurview(objCredentials, EModules.SystemMng, EFunctions.SystemMng, EActions.Vie) != 1)
                 throw new Exception(String.Format("Service Method:{0} Access Error", base.GetActionName()));
             return this.BLLProvider.SystemInfoBLL.IsRepeatName(name, id);
         }
@@ -69,7 +69,7 @@ namespace BPMS.Services
         public bool SystemCodeIsRepeat(string xmlCredentials, string code, int id)
         {
             ClientCredentials objCredentials = xmlCredentials.ToModel<ClientCredentials>();
-            if (CheckPurview(objCredentials, EModules.PurviewMng, EFunctions.SystemMng, EActions.Vie) != 1)
+            if (CheckPurview(objCredentials, EModules.SystemMng, EFunctions.SystemMng, EActions.Vie) != 1)
                 throw new Exception(String.Format("Service Method:{0} Access Error", base.GetActionName()));
             return this.BLLProvider.SystemInfoBLL.IsRepeatCode(code, id);
         }

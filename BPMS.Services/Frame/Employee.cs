@@ -9,7 +9,7 @@ namespace BPMS.Services
         public string EmployeeGetList(string xmlCredentials, int category, int orgaId, int searchType, string keyWord, int pageIndex, int pageSize, out int count)
         {
             ClientCredentials objCredentials = xmlCredentials.ToModel<ClientCredentials>();
-            if (CheckPurview(objCredentials, EModules.PurviewMng, EFunctions.EmployeeMng, EActions.Vie) != 1)
+            if (CheckPurview(objCredentials, EModules.OrganizationMng, EFunctions.EmployeeMng, EActions.Vie) != 1)
                 throw new Exception(String.Format("Service Method:{0} Access Error", base.GetActionName()));
             DataTable rltDt = this.BLLProvider.EmployeeBLL.GetList(objCredentials.UserId, objCredentials.UserName, (EOrgaCategory)category, orgaId, searchType, keyWord, pageIndex, pageSize, out count);
             return ZipHelper.CompressDataTable(rltDt);
@@ -18,7 +18,7 @@ namespace BPMS.Services
         public string EmployeeGetModel(string xmlCredentials, int id)
         {
             ClientCredentials objCredentials = xmlCredentials.ToModel<ClientCredentials>();
-            if (CheckPurview(objCredentials, EModules.PurviewMng, EFunctions.EmployeeMng, EActions.Vie) != 1)
+            if (CheckPurview(objCredentials, EModules.OrganizationMng, EFunctions.EmployeeMng, EActions.Vie) != 1)
                 throw new Exception(String.Format("Service Method:{0} Access Error", base.GetActionName()));
             return this.BLLProvider.EmployeeBLL.GetModel(id).ToXmlString();
         }
@@ -26,7 +26,7 @@ namespace BPMS.Services
         public int EmployeeAdd(string xmlCredentials, string xmlModel)
         {
             ClientCredentials objCredentials = xmlCredentials.ToModel<ClientCredentials>();
-            if (CheckPurview(objCredentials, EModules.PurviewMng, EFunctions.EmployeeMng, EActions.Add) != 1)
+            if (CheckPurview(objCredentials, EModules.OrganizationMng, EFunctions.EmployeeMng, EActions.Add) != 1)
                 throw new Exception(String.Format("Service Method:{0} Access Error", base.GetActionName()));
             var model = xmlModel.ToModel<Employee>();
             model.CreateUserId = objCredentials.UserId;
@@ -41,7 +41,7 @@ namespace BPMS.Services
         public int EmployeeEdit(string xmlCredentials, string xmlModel)
         {
             ClientCredentials objCredentials = xmlCredentials.ToModel<ClientCredentials>();
-            if (CheckPurview(objCredentials, EModules.PurviewMng, EFunctions.EmployeeMng, EActions.Upd) != 1)
+            if (CheckPurview(objCredentials, EModules.OrganizationMng, EFunctions.EmployeeMng, EActions.Upd) != 1)
                 throw new Exception(String.Format("Service Method:{0} Access Error", base.GetActionName()));
             var model = xmlModel.ToModel<Employee>();
             model.ModifyDate = DateTime.Now;
@@ -54,7 +54,7 @@ namespace BPMS.Services
         public bool EmployeeCodeIsRepeat(string xmlCredentials, string code, int id)
         {
             ClientCredentials objCredentials = xmlCredentials.ToModel<ClientCredentials>();
-            if (CheckPurview(objCredentials, EModules.PurviewMng, EFunctions.EmployeeMng, EActions.Vie) != 1)
+            if (CheckPurview(objCredentials, EModules.OrganizationMng, EFunctions.EmployeeMng, EActions.Vie) != 1)
                 throw new Exception(String.Format("Service Method:{0} Access Error", base.GetActionName()));
             return this.BLLProvider.EmployeeBLL.IsRepeatCode(code, id);
         }

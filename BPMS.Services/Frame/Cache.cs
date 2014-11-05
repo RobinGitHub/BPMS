@@ -22,7 +22,7 @@ namespace BPMS.Services
         /// <returns></returns>
         public string GetCacheKeyList(string xmlCredentials, string keyWord, int pageSize, int pageIndex, out int count)
         {
-            if (CheckPurview(xmlCredentials, EModules.PurviewMng, EFunctions.CacheMng, EActions.Vie) != 1)
+            if (CheckPurview(xmlCredentials, EModules.SystemMng, EFunctions.CacheMng, EActions.Vie) != 1)
                 throw new Exception(String.Format("Service Method:{0} Access Error", base.GetActionName()));
             List<string> lstKey = CacheHelper.GetCacheKeyList(pageIndex, pageSize, out count, keyWord).OrderBy(t => t).ToList();
             DataTable tbRlt = new DataTable();
@@ -43,7 +43,7 @@ namespace BPMS.Services
         /// <returns>0 失败 1成功</returns>
         public int CacheClear(string xmlCredentials, List<string> lstKeyWord)
         {
-            if (CheckPurview(xmlCredentials, EModules.PurviewMng, EFunctions.CacheMng, EActions.Del) != 1)
+            if (CheckPurview(xmlCredentials, EModules.SystemMng, EFunctions.CacheMng, EActions.Del) != 1)
                 throw new Exception(String.Format("Service Method:{0} Access Error", base.GetActionName()));
             foreach (string key in lstKeyWord)
                 CacheHelper.Remove(key);

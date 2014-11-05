@@ -10,7 +10,7 @@ namespace BPMS.Services
         public string OrganGetList(string xmlCredentials)
         {
             ClientCredentials objCredentials = xmlCredentials.ToModel<ClientCredentials>();
-            if (CheckPurview(objCredentials, EModules.PurviewMng, EFunctions.OrganMng, EActions.Vie) != 1)
+            if (CheckPurview(objCredentials, EModules.OrganizationMng, EFunctions.OrganMng, EActions.Vie) != 1)
                 throw new Exception(String.Format("Service Method:{0} Access Error", base.GetActionName()));
             DataTable dtRlt = this.BLLProvider.OrganizationBLL.GetList(objCredentials.UserId, objCredentials.UserName);
             return ZipHelper.CompressDataTable(dtRlt);
@@ -19,7 +19,7 @@ namespace BPMS.Services
         public string OrganGetModel(string xmlCredentials, int id)
         {
             ClientCredentials objCredentials = xmlCredentials.ToModel<ClientCredentials>();
-            if (CheckPurview(objCredentials, EModules.PurviewMng, EFunctions.OrganMng, EActions.Vie) != 1)
+            if (CheckPurview(objCredentials, EModules.OrganizationMng, EFunctions.OrganMng, EActions.Vie) != 1)
                 throw new Exception(String.Format("Service Method:{0} Access Error", base.GetActionName()));
             return this.BLLProvider.OrganizationBLL.GetModel(id).ToXmlString();
         }
@@ -27,7 +27,7 @@ namespace BPMS.Services
         public int OrganAdd(string xmlCredentials, string xmlModel)
         {
             ClientCredentials objCredentials = xmlCredentials.ToModel<ClientCredentials>();
-            if (CheckPurview(objCredentials, EModules.PurviewMng, EFunctions.OrganMng, EActions.Add) != 1)
+            if (CheckPurview(objCredentials, EModules.OrganizationMng, EFunctions.OrganMng, EActions.Add) != 1)
                 throw new Exception(String.Format("Service Method:{0} Access Error", base.GetActionName()));
             var model = xmlModel.ToModel<Organization>();
             model.CreateUserId = objCredentials.UserId;
@@ -42,7 +42,7 @@ namespace BPMS.Services
         public int OrganEdit(string xmlCredentials, string xmlModel)
         {
             ClientCredentials objCredentials = xmlCredentials.ToModel<ClientCredentials>();
-            if (CheckPurview(objCredentials, EModules.PurviewMng, EFunctions.OrganMng, EActions.Upd) != 1)
+            if (CheckPurview(objCredentials, EModules.OrganizationMng, EFunctions.OrganMng, EActions.Upd) != 1)
                 throw new Exception(String.Format("Service Method:{0} Access Error", base.GetActionName()));
             var model = xmlModel.ToModel<Organization>();
             model.ModifyDate = DateTime.Now;
@@ -54,7 +54,7 @@ namespace BPMS.Services
         public int OrganDelete(string xmlCredentials, int id)
         {
             ClientCredentials objCredentials = xmlCredentials.ToModel<ClientCredentials>();
-            if (CheckPurview(objCredentials, EModules.PurviewMng, EFunctions.OrganMng, EActions.Del) != 1)
+            if (CheckPurview(objCredentials, EModules.OrganizationMng, EFunctions.OrganMng, EActions.Del) != 1)
                 throw new Exception(String.Format("Service Method:{0} Access Error", base.GetActionName()));
             return this.BLLProvider.OrganizationBLL.Delete(objCredentials.UserId, objCredentials.UserName, id);
         }
@@ -62,7 +62,7 @@ namespace BPMS.Services
         public bool OrganNameIsRepeat(string xmlCredentials, int parentId, string name, int id)
         {
             ClientCredentials objCredentials = xmlCredentials.ToModel<ClientCredentials>();
-            if (CheckPurview(objCredentials, EModules.PurviewMng, EFunctions.OrganMng, EActions.Vie) != 1)
+            if (CheckPurview(objCredentials, EModules.OrganizationMng, EFunctions.OrganMng, EActions.Vie) != 1)
                 throw new Exception(String.Format("Service Method:{0} Access Error", base.GetActionName()));
             return this.BLLProvider.OrganizationBLL.IsRepeatName(parentId, name, id);
         }
@@ -70,7 +70,7 @@ namespace BPMS.Services
         public bool OrganCodeIsRepeat(string xmlCredentials, int parentId, string code, int id)
         {
             ClientCredentials objCredentials = xmlCredentials.ToModel<ClientCredentials>();
-            if (CheckPurview(objCredentials, EModules.PurviewMng, EFunctions.OrganMng, EActions.Vie) != 1)
+            if (CheckPurview(objCredentials, EModules.OrganizationMng, EFunctions.OrganMng, EActions.Vie) != 1)
                 throw new Exception(String.Format("Service Method:{0} Access Error", base.GetActionName()));
             return this.BLLProvider.OrganizationBLL.IsRepeatCode(parentId, code, id);
         }

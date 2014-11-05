@@ -10,7 +10,7 @@ namespace BPMS.Services
         public string RoleGetList(string xmlCredentials, int systemId)
         {
             ClientCredentials objCredentials = xmlCredentials.ToModel<ClientCredentials>();
-            if (CheckPurview(objCredentials, EModules.PurviewMng, EFunctions.RoleMng, EActions.Vie) != 1)
+            if (CheckPurview(objCredentials, EModules.SystemMng, EFunctions.RoleMng, EActions.Vie) != 1)
                 throw new Exception(String.Format("Service Method:{0} Access Error", base.GetActionName()));
             DataTable dtRlt = this.BLLProvider.RoleInfoBLL.GetList(objCredentials.UserId, objCredentials.UserName, systemId);
             return ZipHelper.CompressDataTable(dtRlt);
@@ -19,7 +19,7 @@ namespace BPMS.Services
         public string RoleGetModel(string xmlCredentials, int id)
         {
             ClientCredentials objCredentials = xmlCredentials.ToModel<ClientCredentials>();
-            if (CheckPurview(objCredentials, EModules.PurviewMng, EFunctions.RoleMng, EActions.Vie) != 1)
+            if (CheckPurview(objCredentials, EModules.SystemMng, EFunctions.RoleMng, EActions.Vie) != 1)
                 throw new Exception(String.Format("Service Method:{0} Access Error", base.GetActionName()));
             return this.BLLProvider.RoleInfoBLL.GetModel(id).ToXmlString();
         }
@@ -27,7 +27,7 @@ namespace BPMS.Services
         public int RoleAdd(string xmlCredentials, string xmlModel)
         {
             ClientCredentials objCredentials = xmlCredentials.ToModel<ClientCredentials>();
-            if (CheckPurview(objCredentials, EModules.PurviewMng, EFunctions.RoleMng, EActions.Add) != 1)
+            if (CheckPurview(objCredentials, EModules.SystemMng, EFunctions.RoleMng, EActions.Add) != 1)
                 throw new Exception(String.Format("Service Method:{0} Access Error", base.GetActionName()));
             var model = xmlModel.ToModel<RoleInfo>();
             model.CreateUserId = objCredentials.UserId;
@@ -42,7 +42,7 @@ namespace BPMS.Services
         public int RoleEdit(string xmlCredentials, string xmlModel)
         {
             ClientCredentials objCredentials = xmlCredentials.ToModel<ClientCredentials>();
-            if (CheckPurview(objCredentials, EModules.PurviewMng, EFunctions.RoleMng, EActions.Upd) != 1)
+            if (CheckPurview(objCredentials, EModules.SystemMng, EFunctions.RoleMng, EActions.Upd) != 1)
                 throw new Exception(String.Format("Service Method:{0} Access Error", base.GetActionName()));
             var model = xmlModel.ToModel<RoleInfo>();
             model.ModifyDate = DateTime.Now;
@@ -54,7 +54,7 @@ namespace BPMS.Services
         public int RoleDelete(string xmlCredentials, int id)
         {
             ClientCredentials objCredentials = xmlCredentials.ToModel<ClientCredentials>();
-            if (CheckPurview(objCredentials, EModules.PurviewMng, EFunctions.RoleMng, EActions.Del) != 1)
+            if (CheckPurview(objCredentials, EModules.SystemMng, EFunctions.RoleMng, EActions.Del) != 1)
                 throw new Exception(String.Format("Service Method:{0} Access Error", base.GetActionName()));
             return this.BLLProvider.RoleInfoBLL.Delete(objCredentials.UserId, objCredentials.UserName, id);
         }
@@ -62,7 +62,7 @@ namespace BPMS.Services
         public bool RoleNameIsRepeat(string xmlCredentials, int systemId, string name, int id)
         {
             ClientCredentials objCredentials = xmlCredentials.ToModel<ClientCredentials>();
-            if (CheckPurview(objCredentials, EModules.PurviewMng, EFunctions.RoleMng, EActions.Vie) != 1)
+            if (CheckPurview(objCredentials, EModules.SystemMng, EFunctions.RoleMng, EActions.Vie) != 1)
                 throw new Exception(String.Format("Service Method:{0} Access Error", base.GetActionName()));
             return this.BLLProvider.RoleInfoBLL.IsRepeatName(systemId, name, id);
         }
@@ -70,7 +70,7 @@ namespace BPMS.Services
         public bool RoleCodeIsRepeat(string xmlCredentials, int systemId, string code, int id)
         {
             ClientCredentials objCredentials = xmlCredentials.ToModel<ClientCredentials>();
-            if (CheckPurview(objCredentials, EModules.PurviewMng, EFunctions.RoleMng, EActions.Vie) != 1)
+            if (CheckPurview(objCredentials, EModules.SystemMng, EFunctions.RoleMng, EActions.Vie) != 1)
                 throw new Exception(String.Format("Service Method:{0} Access Error", base.GetActionName()));
             return this.BLLProvider.RoleInfoBLL.IsRepeatCode(systemId, code, id);
         }
