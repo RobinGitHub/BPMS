@@ -7,8 +7,8 @@
              d:DesignHeight="22" d:DesignWidth="165">
     <Grid>
         <WrapPanel>
-            <Button x:Name="btnSure" Content="确 认" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="75"/>
-            <Button x:Name="btnClose" Margin="10, 0 , 0 ,0" Content="关 闭" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="75"/>
+            <Button x:Name="btnSure" Content="确 认" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="75" TabIndex="2"/>
+            <Button x:Name="btnClose" Margin="10, 0 , 0 ,0" Content="关 闭" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="75" IsDefault="True" TabIndex="1"/>
         </WrapPanel>
     </Grid>
 </UserControl>

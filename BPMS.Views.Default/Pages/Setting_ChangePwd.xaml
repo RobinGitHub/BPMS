@@ -1,14 +1,16 @@
-﻿<UserControl
+﻿<UserControl xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" 
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              xmlns:local="clr-namespace:BPMS.Views.Default" x:Class="BPMS.Views.Default.Setting_ChangePwd" 
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
+        <sys:String x:Key="ttt">33</sys:String>
         <Style TargetType="{x:Type TextBox}">
-            <Setter Property="Height" Value="23" />
+            <Setter Property="Height" Value="{StaticResource txtHeight}" />
             <Setter Property="HorizontalAlignment" Value="Left" />
         </Style>
 
@@ -21,6 +23,13 @@
             <Setter Property="X2" Value="{DynamicResource {x:Static SystemParameters.MaximumWindowTrackWidthKey}}" />
             <Setter Property="Y1" Value="0" />
             <Setter Property="Y2" Value="0" />
+        </Style>
+
+        <Style TargetType="{x:Type dxe:PasswordBoxEdit}">
+            <Setter Property="Height" Value="{StaticResource txtHeight}" />
+            <Setter Property="Width" Value="200" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="MaxLength" Value="20" />
         </Style>
     </UserControl.Resources>
 
@@ -36,19 +45,19 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Label Grid.Column="0" Grid.Row="0" Content="账户[*]：" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-        <TextBox Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" Width="200" IsReadOnly="True"  />
+        <TextBox Grid.Column="1" Grid.Row="0" Text="{Binding Name, Mode=OneWay}" HorizontalAlignment="Left" Width="200" IsReadOnly="True" />
 
         <Line Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource lineBottom}" />
         <Line Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource lineBottom}" />
         <Line Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource lineBottom}" />
 
         <Label Grid.Column="0" Grid.Row="1" Content="新密码[*]：" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-        <TextBox Grid.Column="1" Grid.Row="1" Width="200"  />
+        <dxe:PasswordBoxEdit Grid.Column="1" Grid.Row="1" />
 
         <Label Grid.Column="0" Grid.Row="2" Content="确认密码[*]：" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-        <TextBox Grid.Column="1" Grid.Row="2" Width="200"  />
+        <dxe:PasswordBoxEdit  Grid.Column="1" Grid.Row="2" />
 
-
-        <local:ButtonTools Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0, 0, 0, 10"/>
+        <local:TipControl x:Name="tipControl" />
+        <local:ButtonTools x:Name="buttonTools" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0, 0, 0, 10"/>
     </Grid>
 </UserControl>

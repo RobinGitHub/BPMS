@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace BPMS.ViewModels
 {
-    public class SettingViewModel
+    public class SettingViewModel : ObservableObject
     {
         #region 属性
         #region 获取第一级菜单
@@ -26,6 +26,18 @@ namespace BPMS.ViewModels
             }
         }
         #endregion
+
+
+        public string Name 
+        {
+            get 
+            { //return User.Current.Name; 
+                return "admin";
+            }
+        }
+
+        public string Password { get; set; }
+
         #endregion
 
         #region 事件

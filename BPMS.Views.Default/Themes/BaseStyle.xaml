@@ -5,6 +5,7 @@
         xmlns:dxca="http://schemas.devexpress.com/winfx/2008/xaml/carousel" 
         xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui"
         xmlns:my="clr-namespace:BPMS.Views.Default"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         >
     
     
@@ -25,4 +26,9 @@
         <Setter Property="ShowInTaskbar" Value="False" />
         <Setter Property="dx:ThemeManager.ThemeName" Value="DXStyle" />
     </Style>
+    
+    
+    <!--设置常量-->
+    <!--文本框的行高-->
+    <sys:Double x:Key="txtHeight">22</sys:Double>
 </ResourceDictionary>
